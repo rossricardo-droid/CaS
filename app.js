@@ -49,8 +49,8 @@ let lang = "es";
 let activeKey = "oe"; // ✅ default: Orquestación
 
 // Slot “pro”: reemplázalo por 1 línea real de tu About cuando la pegues aquí
-const PRO_LINKEDIN_SLOT_ES = "Especialista en ejecución: conecto estrategia, diseño organizacional y tecnología para resultados sostenibles.";
-const PRO_LINKEDIN_SLOT_EN = "Execution specialist: I connect strategy, organizational design and technology for durable outcomes.";
+const PRO_LINKEDIN_SLOT_ES = "";
+const PRO_LINKEDIN_SLOT_EN = "";
 
 const COPY = {
   es: {
@@ -59,7 +59,7 @@ const COPY = {
     name: "Ricardo Ross",
 
     whoLabel: "Quién soy",
-    whoText: "Ing. Civil Industrial · MSc · MBA. 20+ años trabajando en empresas líderes (BCI, Walmart, Banco de Chile), liderando transformación, agilidad y ejecución en contextos de alta complejidad.",
+    whoText: "Ingeniero Civil Industrial · MsC · MBA. 20+ años trabajando en empresas líderes (BCI, Walmart, Banco de Chile), liderando transformación, agilidad y ejecución en contextos de alta complejidad.",
     whoMicro: PRO_LINKEDIN_SLOT_ES,
 
     whatLabel: "Qué hago",
@@ -129,7 +129,7 @@ const COPY = {
     name: "Ricardo Ross",
 
     whoLabel: "Who I am",
-    whoText: "Industrial Civil Engineer · MSc · MBA. 20+ years across leading companies (BCI, Walmart, Banco de Chile), leading transformation, agility and execution in high-complexity environments.",
+    whoText: "Industrial Civil Engineer · MsC · MBA. 20+ years across leading companies (BCI, Walmart, Banco de Chile), leading transformation, agility and execution in high-complexity environments.",
     whoMicro: PRO_LINKEDIN_SLOT_EN,
 
     whatLabel: "What I do",
@@ -291,3 +291,4 @@ els.btnEN.addEventListener("click", () => setLang("en"));
 /* Init */
 renderStatic();
 setActive("oe"); // ✅ Orquestación por defecto
+
