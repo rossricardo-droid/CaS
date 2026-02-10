@@ -37,6 +37,7 @@ const els = {
   detailTitle: document.getElementById("detailTitle"),
   detailValue: document.getElementById("detailValue"),
   detailText: document.getElementById("detailText"),
+  detailLink: document.getElementById("detailLink"),
   detailOutcomes: document.getElementById("detailOutcomes"),
 
   footerLine: document.getElementById("footerLine"),
@@ -45,14 +46,11 @@ const els = {
 const cards = Array.from(document.querySelectorAll(".card"));
 
 let lang = "es";
-let activeKey = "mi";
+let activeKey = "oe"; // ✅ default: Orquestación
 
-/**
- * Slot pro: pega aquí 1 línea real de tu "About" para que deje de sonar a plantilla.
- * Si no lo cambias, igual funciona.
- */
-const PRO_LINKEDIN_SLOT_ES = "";
-const PRO_LINKEDIN_SLOT_EN = "";
+// Slot “pro”: reemplázalo por 1 línea real de tu About cuando la pegues aquí
+const PRO_LINKEDIN_SLOT_ES = "Especialista en ejecución: conecto estrategia, diseño organizacional y tecnología para resultados sostenibles.";
+const PRO_LINKEDIN_SLOT_EN = "Execution specialist: I connect strategy, organizational design and technology for durable outcomes.";
 
 const COPY = {
   es: {
@@ -61,12 +59,12 @@ const COPY = {
     name: "Ricardo Ross",
 
     whoLabel: "Quién soy",
-    whoText: "Ingeniero Civil Industrial · MSc · MBA. 20+ años trabajando en empresas líderes (BCI, Walmart, Banco de Chile), liderando transformación, agilidad y ejecución en contextos de alta complejidad.",
+    whoText: "Ing. Civil Industrial · MSc · MBA. 20+ años trabajando en empresas líderes (BCI, Walmart, Banco de Chile), liderando transformación, agilidad y ejecución en contextos de alta complejidad.",
     whoMicro: PRO_LINKEDIN_SLOT_ES,
 
     whatLabel: "Qué hago",
-    // EXACTO como lo pediste:
-    whatText: "Convierto complejidad en ejecución: solución a problemas complejos, conecto la estrategia en su bajada a la operación y habilito reinvención organizacional con criterio y realidad",
+    // EXACTO como pediste:
+    whatText: "Convierto complejidad en ejecución: solución a problemas complejos, preservo la estrategia en su bajada a la operación y habilito reinvención organizacional con criterio y realidad",
 
     sig1: "Pensamiento sistémico + palanca tecnológica",
     sig2: "Integridad de ejecución estratégica",
@@ -89,7 +87,7 @@ const COPY = {
     },
 
     detail: {
-       oe: {
+      oe: {
         title: "Orquestación de ejecución estratégica",
         value: "<b>Resultado:</b> que la estrategia ocurra sin distorsión ni deriva.",
         text: "Mantengo integridad estratégica a través del cascadeo y en el tiempo. Conecto prioridades, decisiones, procesos críticos y métricas para evitar dilución y sostener coherencia bajo presión.",
@@ -103,6 +101,7 @@ const COPY = {
         title: "MicroInnovación tecnológica",
         value: "<b>Resultado:</b> resolver problemas complejos y restaurar escalabilidad.",
         text: "Convierto problemas complejos (proceso + tecnología + estructura + decisión) en soluciones implementables. Tecnología como palanca para recuperar gobernabilidad, elevar calidad de decisión y sostener crecimiento sin colapso.",
+        link: { label: "Ver OneMind — plataforma de microinnovación", url: "https://www.onemind.works" },
         outcomes: [
           "<b>Gobernabilidad:</b> <span>sistemas predecibles bajo crecimiento.</span>",
           "<b>Decisión:</b> <span>menos fricción, más velocidad y precisión.</span>",
@@ -151,22 +150,12 @@ const COPY = {
     detailKicker: "What I deliver",
 
     cards: {
-      mi: { title:"Technology micro-innovation", sub:"Complex problems → solvable & scalable" },
       oe: { title:"Strategic execution orchestration", sub:"Strategy integrity → sustained action" },
+      mi: { title:"Technology micro-innovation", sub:"Complex problems → solvable & scalable" },
       rl: { title:"Organizational reinvention & leadership", sub:"Deep change → decisions with rigor" },
     },
 
     detail: {
-      mi: {
-        title: "Technology micro-innovation",
-        value: "<b>Outcome:</b> make complex problems solvable and restore scalability.",
-        text: "I turn complex problems (process + tech + structure + decision-making) into implementable solutions. Technology becomes the lever to regain governability, improve decision quality, and sustain growth without operational collapse.",
-        outcomes: [
-          "<b>Governability:</b> <span>predictable systems under growth.</span>",
-          "<b>Decision:</b> <span>less friction, more speed and accuracy.</span>",
-          "<b>Scale:</b> <span>grow without operational degradation.</span>"
-        ]
-      },
       oe: {
         title: "Strategic execution orchestration",
         value: "<b>Outcome:</b> strategy happens—without distortion or drift.",
@@ -175,6 +164,17 @@ const COPY = {
           "<b>Integrity:</b> <span>less drift, more alignment.</span>",
           "<b>Coherence:</b> <span>priorities, processes and metrics tied to intent.</span>",
           "<b>Durability:</b> <span>consistent action, not short-term campaigns.</span>"
+        ]
+      },
+      mi: {
+        title: "Technology micro-innovation",
+        value: "<b>Outcome:</b> make complex problems solvable and restore scalability.",
+        text: "I turn complex problems (process + technology + structure + decision-making) into implementable solutions. Technology becomes the lever to regain governability, improve decision quality, and sustain growth without operational collapse.",
+        link: { label: "Explore OneMind — micro-innovation platform", url: "https://www.onemind.works" },
+        outcomes: [
+          "<b>Governability:</b> <span>predictable systems under growth.</span>",
+          "<b>Decision:</b> <span>less friction, more speed and accuracy.</span>",
+          "<b>Scale:</b> <span>grow without operational degradation.</span>"
         ]
       },
       rl: {
@@ -195,7 +195,6 @@ const COPY = {
 
 function renderStatic() {
   const c = COPY[lang];
-
   document.documentElement.lang = lang;
 
   els.topBadge.textContent = c.topBadge;
@@ -221,13 +220,13 @@ function renderStatic() {
 
   els.railTitle.textContent = c.railTitle;
   els.railHint.textContent = c.railHint;
-
   els.detailKicker.textContent = c.detailKicker;
 
-  els.miTitle.textContent = c.cards.mi.title;
-  els.miSub.textContent = c.cards.mi.sub;
+  // Títulos (aunque el orden visual lo dicta HTML)
   els.oeTitle.textContent = c.cards.oe.title;
   els.oeSub.textContent = c.cards.oe.sub;
+  els.miTitle.textContent = c.cards.mi.title;
+  els.miSub.textContent = c.cards.mi.sub;
   els.rlTitle.textContent = c.cards.rl.title;
   els.rlSub.textContent = c.cards.rl.sub;
 
@@ -240,28 +239,42 @@ function renderStatic() {
 
 function renderDetail() {
   const d = COPY[lang].detail[activeKey];
+
   els.detailTitle.textContent = d.title;
   els.detailValue.innerHTML = d.value;
   els.detailText.textContent = d.text;
   els.detailOutcomes.innerHTML = d.outcomes.map(x => `<li>${x}</li>`).join("");
+
+  // Link contextual (OneMind en MI)
+  if (d.link) {
+    els.detailLink.hidden = false;
+    els.detailLink.innerHTML = `<a href="${d.link.url}" target="_blank" rel="noopener">${d.link.label} →</a>`;
+  } else {
+    els.detailLink.hidden = true;
+    els.detailLink.innerHTML = "";
+  }
 }
 
 function setActive(key){
   activeKey = key;
+
   cards.forEach(btn => {
     const on = btn.dataset.key === key;
     btn.classList.toggle("active", on);
     btn.setAttribute("aria-selected", on ? "true" : "false");
   });
+
   renderDetail();
 }
 
 function setLang(next){
   lang = next;
+
   els.btnES.classList.toggle("active", lang === "es");
   els.btnEN.classList.toggle("active", lang === "en");
   els.btnES.setAttribute("aria-pressed", lang === "es" ? "true" : "false");
   els.btnEN.setAttribute("aria-pressed", lang === "en" ? "true" : "false");
+
   renderStatic();
   renderDetail();
 }
@@ -277,5 +290,4 @@ els.btnEN.addEventListener("click", () => setLang("en"));
 
 /* Init */
 renderStatic();
-setActive("mi");
-
+setActive("oe"); // ✅ Orquestación por defecto
