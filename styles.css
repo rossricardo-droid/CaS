@@ -524,3 +524,30 @@ footer{
   .ctaActions{ flex-direction: column; align-items: stretch; }
   .btn{ width: 100%; }
 }
+/* === FIX DEFINITIVO: textos negros en cards (buttons) === */
+
+/* 1) Blindaje del botón */
+button.card{
+  color: var(--text) !important;
+  -webkit-text-fill-color: var(--text) !important; /* Safari/iOS */
+}
+
+/* 2) Blindaje de TODOS los descendientes */
+button.card *{
+  color: inherit !important;
+  -webkit-text-fill-color: inherit !important;
+}
+
+/* 3) Luego re-aplico el subtítulo como muted, con prioridad */
+button.card .cardSub{
+  color: var(--muted) !important;
+  -webkit-text-fill-color: var(--muted) !important;
+}
+
+/* 4) Si por error quedan disabled, que no se oscurezcan */
+button.card:disabled{
+  opacity: 1 !important;
+  filter: none !important;
+  cursor: pointer !important;
+}
+
