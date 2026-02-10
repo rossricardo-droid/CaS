@@ -12,6 +12,11 @@
   --panel2: rgba(7, 10, 16, .55);
   --shadow: 0 18px 70px rgba(0,0,0,.6);
   --glow: 0 0 0 1px rgba(79,140,255,.18), 0 0 40px rgba(79,140,255,.10);
+
+  /* ✅ Focal point de la foto: ajustable sin tocar más CSS */
+  --photo-x: 50%;
+  --photo-y-desktop: 35%;
+  --photo-y-mobile: 22%;
 }
 
 *{ box-sizing:border-box; }
@@ -30,7 +35,6 @@ body{
   overflow-x:hidden;
 }
 
-/* Subtle grid */
 .grid {
   position: fixed;
   inset: 0;
@@ -205,8 +209,12 @@ h1{
   line-height: 1.45;
 }
 
-/* Hero image */
-.heroRight{ padding:0; min-height: 320px; }
+/* Hero image (✅ fix mobile crop via object-position focal point) */
+.heroRight{
+  padding:0;
+  min-height: 320px;
+}
+
 .heroRight::after{
   content:"";
   position:absolute; inset:0;
@@ -220,6 +228,7 @@ h1{
   width:100%;
   height:100%;
   object-fit: cover;
+  object-position: var(--photo-x) var(--photo-y-desktop);
   display:block;
 }
 
@@ -374,7 +383,7 @@ h1{
 /* Cards (buttons) */
 .cards{ display:flex; flex-direction:column; gap: 12px; }
 
-.card{
+button.card{
   appearance:none;
   -webkit-appearance:none;
   border: 1px solid var(--line);
@@ -388,22 +397,42 @@ h1{
   overflow:hidden;
   text-align:left;
 
-  /* ✅ Fix for black text on buttons */
+  /* base */
   color: var(--text);
   font: inherit;
+
+  /* ✅ Safari/iOS “text fill” */
+  -webkit-text-fill-color: var(--text);
 }
 
-.card:hover, .card:focus-visible{
+button.card:hover, button.card:focus-visible{
   transform: translateY(-2px);
   border-color: rgba(79,140,255,.45);
   background: rgba(79,140,255,.06);
   box-shadow: 0 0 0 1px rgba(79,140,255,.18), 0 20px 60px rgba(0,0,0,.55);
 }
 
-.card.active{
+button.card.active{
   border-color: rgba(79,140,255,.65);
   background: rgba(79,140,255,.09);
   box-shadow: 0 0 0 1px rgba(79,140,255,.22), 0 20px 60px rgba(0,0,0,.55);
+}
+
+/* ✅ FIX definitivo: evitar “títulos negros” en descendientes */
+button.card *{
+  color: inherit !important;
+  -webkit-text-fill-color: inherit !important;
+}
+
+button.card .cardSub{
+  color: var(--muted) !important;
+  -webkit-text-fill-color: var(--muted) !important;
+}
+
+button.card:disabled{
+  opacity: 1 !important;
+  filter: none !important;
+  cursor: pointer !important;
 }
 
 .cardTop{
@@ -419,12 +448,10 @@ h1{
   font-weight: 500;
   letter-spacing:-.01em;
   margin:0;
-  color: var(--text); /* ✅ explicit */
 }
 
 .cardSub{
   margin: 2px 0 0 0;
-  color: var(--muted); /* ✅ explicit */
   font-size: 13px;
 }
 
@@ -465,10 +492,28 @@ h1{
 .detailValue b{ color: var(--a1); font-weight: 600; }
 
 .detailText{
-  margin: 0 0 14px 0;
+  margin: 0 0 10px 0;
   color: var(--muted);
   font-size: 14.5px;
   max-width: 82ch;
+}
+
+.detailLink{
+  margin: 0 0 14px 0;
+  font-size: 13.5px;
+}
+
+.detailLink a{
+  color: var(--a1);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(79,140,255,.35);
+  padding-bottom: 2px;
+  transition: color .18s ease, border-color .18s ease;
+}
+
+.detailLink a:hover{
+  color: var(--text);
+  border-color: rgba(79,140,255,.65);
 }
 
 .outcomes{
@@ -508,9 +553,17 @@ footer{
   .heroLeft{ padding: 18px; }
   .detail{ padding: 18px; }
   .rail{ padding: 16px; }
-  .heroRight{ aspect-ratio: 16/10; min-height: unset; }
   .hint{ display:none; }
   .heroSplit{ grid-template-columns: 1fr; }
+
+  /* ✅ En móvil definimos un recorte más “arriba” para proteger la cara */
+  .heroRight{
+    aspect-ratio: 16/10;
+    min-height: unset;
+  }
+  .heroRight img{
+    object-position: var(--photo-x) var(--photo-y-mobile);
+  }
 }
 
 @media (max-width: 520px){
@@ -523,31 +576,7 @@ footer{
   .ctaLeft{ min-width: unset; }
   .ctaActions{ flex-direction: column; align-items: stretch; }
   .btn{ width: 100%; }
-}
-/* === FIX DEFINITIVO: textos negros en cards (buttons) === */
 
-/* 1) Blindaje del botón */
-button.card{
-  color: var(--text) !important;
-  -webkit-text-fill-color: var(--text) !important; /* Safari/iOS */
+  /* ✅ Aún más control: un poco más de “headroom” */
+  :root{ --photo-y-mobile: 18%; }
 }
-
-/* 2) Blindaje de TODOS los descendientes */
-button.card *{
-  color: inherit !important;
-  -webkit-text-fill-color: inherit !important;
-}
-
-/* 3) Luego re-aplico el subtítulo como muted, con prioridad */
-button.card .cardSub{
-  color: var(--muted) !important;
-  -webkit-text-fill-color: var(--muted) !important;
-}
-
-/* 4) Si por error quedan disabled, que no se oscurezcan */
-button.card:disabled{
-  opacity: 1 !important;
-  filter: none !important;
-  cursor: pointer !important;
-}
-
