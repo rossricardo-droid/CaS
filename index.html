@@ -37,7 +37,6 @@
           <div class="heroBlock">
             <p class="heroLabel" id="whoLabel">Quién soy</p>
             <p class="heroText" id="whoText"></p>
-            <!-- Slot opcional para una línea muy “LinkedIn About” -->
             <p class="heroMicro" id="whoMicro"></p>
           </div>
 
@@ -67,6 +66,7 @@
       </div>
 
       <div class="panel heroRight" aria-label="Foto">
+        <!-- IMPORTANTE: asegura que este archivo esté en el mismo folder que index.html -->
         <img src="./profile.jpg" alt="Foto de perfil de Ricardo Ross" />
       </div>
     </section>
@@ -78,22 +78,23 @@
           <div class="hint" id="railHint">Hover / Tap</div>
         </div>
 
+        <!-- ORDEN: Orquestación → MicroInnovación → Reinvención -->
         <div class="cards" role="tablist" aria-label="Seleccionar un área">
-          <button class="card active" role="tab" aria-selected="true" data-key="mi" type="button">
+          <button class="card active" role="tab" aria-selected="true" data-key="oe" type="button">
             <div class="cardTop">
               <div>
-                <p class="cardTitle" id="miTitle">MicroInnovación tecnológica</p>
-                <p class="cardSub" id="miSub">Problemas complejos → resolubles & escalables</p>
+                <p class="cardTitle" id="oeTitle">Orquestación de ejecución estratégica</p>
+                <p class="cardSub" id="oeSub">Estrategia íntegra → acción sostenida</p>
               </div>
               <span class="sigmark" aria-hidden="true"></span>
             </div>
           </button>
 
-          <button class="card" role="tab" aria-selected="false" data-key="oe" type="button">
+          <button class="card" role="tab" aria-selected="false" data-key="mi" type="button">
             <div class="cardTop">
               <div>
-                <p class="cardTitle" id="oeTitle">Orquestación de ejecución estratégica</p>
-                <p class="cardSub" id="oeSub">Estrategia íntegra → acción sostenida</p>
+                <p class="cardTitle" id="miTitle">MicroInnovación tecnológica</p>
+                <p class="cardSub" id="miSub">Problemas complejos → resolubles & escalables</p>
               </div>
               <span class="sigmark" aria-hidden="true"></span>
             </div>
@@ -116,6 +117,10 @@
         <h3 class="detailTitle" id="detailTitle"></h3>
         <p class="detailValue" id="detailValue"></p>
         <p class="detailText" id="detailText"></p>
+
+        <!-- Link contextual (se muestra solo si existe) -->
+        <p class="detailLink" id="detailLink" hidden></p>
+
         <ul class="outcomes" id="detailOutcomes"></ul>
       </div>
     </section>
@@ -128,4 +133,3 @@
   <script src="app.js"></script>
 </body>
 </html>
-
