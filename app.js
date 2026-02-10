@@ -51,8 +51,8 @@ let activeKey = "mi";
  * Slot pro: pega aquí 1 línea real de tu "About" para que deje de sonar a plantilla.
  * Si no lo cambias, igual funciona.
  */
-const PRO_LINKEDIN_SLOT_ES = "Especialista en ejecución: conecto estrategia, diseño organizacional y tecnología para resultados sostenibles.";
-const PRO_LINKEDIN_SLOT_EN = "Execution specialist: I connect strategy, organizational design and technology for durable outcomes.";
+const PRO_LINKEDIN_SLOT_ES = "";
+const PRO_LINKEDIN_SLOT_EN = "";
 
 const COPY = {
   es: {
@@ -61,12 +61,12 @@ const COPY = {
     name: "Ricardo Ross",
 
     whoLabel: "Quién soy",
-    whoText: "Ing. Civil Industrial · MSc · MBA. 20+ años trabajando en empresas líderes (BCI, Walmart, Banco de Chile), liderando transformación, agilidad y ejecución en contextos de alta complejidad.",
+    whoText: "Ingeniero Civil Industrial · MSc · MBA. 20+ años trabajando en empresas líderes (BCI, Walmart, Banco de Chile), liderando transformación, agilidad y ejecución en contextos de alta complejidad.",
     whoMicro: PRO_LINKEDIN_SLOT_ES,
 
     whatLabel: "Qué hago",
     // EXACTO como lo pediste:
-    whatText: "Convierto complejidad en ejecución: solución a problemas complejos, preservo la estrategia en su bajada a la operación y habilito reinvención organizacional con criterio y realidad",
+    whatText: "Convierto complejidad en ejecución: solución a problemas complejos, conecto la estrategia en su bajada a la operación y habilito reinvención organizacional con criterio y realidad",
 
     sig1: "Pensamiento sistémico + palanca tecnológica",
     sig2: "Integridad de ejecución estratégica",
@@ -83,12 +83,22 @@ const COPY = {
     detailKicker: "Qué logro",
 
     cards: {
-      mi: { title:"MicroInnovación tecnológica", sub:"Problemas complejos → resolubles & escalables" },
       oe: { title:"Orquestación de ejecución estratégica", sub:"Estrategia íntegra → acción sostenida" },
+      mi: { title:"MicroInnovación tecnológica", sub:"Problemas complejos → resolubles & escalables" },
       rl: { title:"Reinvención y liderazgo organizacional", sub:"Cambios profundos → decisiones con criterio" },
     },
 
     detail: {
+       oe: {
+        title: "Orquestación de ejecución estratégica",
+        value: "<b>Resultado:</b> que la estrategia ocurra sin distorsión ni deriva.",
+        text: "Mantengo integridad estratégica a través del cascadeo y en el tiempo. Conecto prioridades, decisiones, procesos críticos y métricas para evitar dilución y sostener coherencia bajo presión.",
+        outcomes: [
+          "<b>Fidelidad:</b> <span>menos deriva, más alineamiento.</span>",
+          "<b>Coherencia:</b> <span>prioridades, procesos y métricas conectados a la intención.</span>",
+          "<b>Sostén:</b> <span>acción consistente, no campañas de corto plazo.</span>"
+        ]
+      },
       mi: {
         title: "MicroInnovación tecnológica",
         value: "<b>Resultado:</b> resolver problemas complejos y restaurar escalabilidad.",
@@ -97,16 +107,6 @@ const COPY = {
           "<b>Gobernabilidad:</b> <span>sistemas predecibles bajo crecimiento.</span>",
           "<b>Decisión:</b> <span>menos fricción, más velocidad y precisión.</span>",
           "<b>Escala:</b> <span>crecer sin degradación operativa.</span>"
-        ]
-      },
-      oe: {
-        title: "Orquestación de ejecución estratégica",
-        value: "<b>Resultado:</b> que la estrategia ocurra sin distorsión ni deriva.",
-        text: "Mantengo integridad estratégica a través del cascadeo y en el tiempo. Conecto prioridades, decisiones, procesos críticos y métricas para evitar dilución y sostener coherencia bajo presión.",
-        outcomes: [
-          "<b>Fidelidad:</b> <span>menos deriva, más alineamiento.</span>",
-          "<b>Coherencia:</b> <span>prioridades, procesos y métricas conectados a la intención.</span>",
-          "<b>Sostén:</b> <span>acción consistente, no campañas de corto plazo.</span>"
         ]
       },
       rl: {
@@ -278,3 +278,4 @@ els.btnEN.addEventListener("click", () => setLang("en"));
 /* Init */
 renderStatic();
 setActive("mi");
+
