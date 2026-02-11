@@ -64,7 +64,7 @@ const COPY = {
 
     whatLabel: "Qué hago",
     // EXACTO como pediste:
-    whatText: "Transformo complejidad en resultados: resuelvo problemas complejos, cuido la integridad de la estrategia al llevarla a la operación y habilito procesos reales de reinvención organizacional.",
+    whatText: "Aseguro que la estrategia se ejecute con integridad, convierto complejidad en resultados, resuelvo problemas complejos y habilito procesos reales de reinvención organizacional.",
 
     sig1: "Pensamiento sistémico + palanca tecnológica",
     sig2: "Integridad de ejecución estratégica",
@@ -133,7 +133,7 @@ const COPY = {
     whoMicro: PRO_LINKEDIN_SLOT_EN,
 
     whatLabel: "What I do",
-    whatText: "I turn complexity into execution: I solve complex problems, keep strategy intact as it hits operations, and enable organizational reinvention with rigor and reality.",
+    whatText: "I ensure the integrity of strategy in execution, turn complexity into results, solve complex problems, and enable real organizational reinvention.",
 
     sig1: "Systems thinking + tech leverage",
     sig2: "Strategic execution integrity",
@@ -291,6 +291,7 @@ els.btnEN.addEventListener("click", () => setLang("en"));
 /* Init */
 renderStatic();
 setActive("oe"); // ✅ Orquestación por defecto
+
 
 
 
