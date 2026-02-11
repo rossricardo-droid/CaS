@@ -64,7 +64,7 @@ const COPY = {
 
     whatLabel: "Qué hago",
     // EXACTO como pediste:
-    whatText: "Convierto complejidad en ejecución: solución a problemas complejos, preservo la estrategia en su bajada a la operación y habilito reinvención organizacional con criterio y realidad",
+    whatText: "Transformo complejidad en resultados: resuelvo problemas complejos, cuido la integridad de la estrategia al llevarla a la operación y habilito procesos reales de reinvención organizacional.",
 
     sig1: "Pensamiento sistémico + palanca tecnológica",
     sig2: "Integridad de ejecución estratégica",
@@ -291,5 +291,6 @@ els.btnEN.addEventListener("click", () => setLang("en"));
 /* Init */
 renderStatic();
 setActive("oe"); // ✅ Orquestación por defecto
+
 
 
