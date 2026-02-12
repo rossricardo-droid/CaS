@@ -17,6 +17,16 @@ const els = {
   sig2: document.getElementById("sig2"),
   sig3: document.getElementById("sig3"),
 
+  openStory: document.getElementById("openStory"),
+  openStoryLabel: document.getElementById("openStoryLabel"),
+
+  storyModal: document.getElementById("storyModal"),
+  storyKicker: document.getElementById("storyKicker"),
+  storyTitle: document.getElementById("storyTitle"),
+  storyBody: document.getElementById("storyBody"),
+  storyQuestion: document.getElementById("storyQuestion"),
+  closeStory: document.getElementById("closeStory"),
+
   ctaTitle: document.getElementById("ctaTitle"),
   ctaNote: document.getElementById("ctaNote"),
   ctaEmail: document.getElementById("ctaEmail"),
@@ -46,11 +56,89 @@ const els = {
 const cards = Array.from(document.querySelectorAll(".card"));
 
 let lang = "es";
-let activeKey = "oe"; // ✅ default: Orquestación
+let activeKey = "oe";
 
-// Slot “pro”: reemplázalo por 1 línea real de tu About cuando la pegues aquí
-const PRO_LINKEDIN_SLOT_ES = "";
-const PRO_LINKEDIN_SLOT_EN = "";
+// Slot “pro” para afinar con tu About real
+const PRO_LINKEDIN_SLOT_ES = "Especialista en ejecución: conecto estrategia, diseño organizacional y tecnología para resultados sostenibles.";
+const PRO_LINKEDIN_SLOT_EN = "Execution specialist: I connect strategy, organizational design and technology for durable outcomes.";
+
+const STORY = {
+  es: {
+    openLabel: "Una decisión estructural",
+    kicker: "Nota personal",
+    title: "Una decisión estructural",
+    bodyHtml: `
+      <p class="lead">Vivir y trabajar desde un velero no fue un cambio de estilo. Fue una decisión de transformación consciente.</p>
+
+      <p>Después de más de 20 años trabajando en grandes organizaciones —liderando agilidad, ejecución estratégica y procesos de cambio en empresas como BCI, Walmart y Banco de Chile— decidí, junto a mi familia, dejar una forma de vida que funcionaba.</p>
+
+      <p>Había estabilidad. Había ingreso fijo. Había estructura. Había reconocimiento.</p>
+
+      <p class="em">También había una pregunta incómoda: ¿estoy viviendo coherentemente con lo que sostengo profesionalmente sobre transformación, riesgo y diseño de sistemas?</p>
+
+      <p>Transformarse implica pérdidas reales: perder estructura conocida, perder validación externa, perder certezas; aceptar incertidumbre no teórica.</p>
+
+      <p>La transición no fue romántica. Hubo miedo, fricción y momentos de duda. Pero ahí está el punto.</p>
+
+      <p>La mayoría de los procesos de transformación organizacional fracasan porque se diseñan desde la teoría, no desde la experiencia vivida de pérdida y tensión.</p>
+
+      <p>En un velero, el sistema es visible: energía limitada, recursos finitos, espacio reducido y consecuencias inmediatas. No puedes ocultar ineficiencia, no puedes postergar decisiones estructurales, no puedes sostener complejidad innecesaria.</p>
+
+      <p>Ese entorno obliga a:</p>
+      <ul>
+        <li>Diseñar con claridad. <span>(sin ilusión de abundancia)</span></li>
+        <li>Priorizar con disciplina. <span>(lo esencial gana)</span></li>
+        <li>Ejecutar con coherencia. <span>(decisión → acción)</span></li>
+        <li>Tomar decisiones bajo restricción real. <span>(no teórica)</span></li>
+      </ul>
+
+      <p>Transformarse no es cambiar discurso. Es atravesar incertidumbre y rediseñar el sistema completo.</p>
+
+      <p>Esa experiencia personal no es anecdótica. Es la base desde la cual intervengo organizaciones que necesitan reinventarse sin destruirse en el proceso.</p>
+
+      <p class="em">No hablo de cambio desde afuera. Lo he vivido estructuralmente.</p>
+    `,
+    question: "¿Puede una organización transformarse de verdad sin aceptar pérdidas reales y rediseñar su sistema completo?"
+  },
+
+  en: {
+    openLabel: "A structural decision",
+    kicker: "Personal note",
+    title: "A structural decision",
+    bodyHtml: `
+      <p class="lead">Living and working from a sailboat wasn’t a lifestyle change. It was a deliberate transformation decision.</p>
+
+      <p>After 20+ years in large organizations—leading agility, strategic execution and change across companies like BCI, Walmart and Banco de Chile—I decided, together with my family, to leave a way of life that “worked”.</p>
+
+      <p>There was stability. Predictable income. Structure. External validation.</p>
+
+      <p class="em">And there was an uncomfortable question: am I living consistently with what I claim about transformation, risk and systems design?</p>
+
+      <p>Transformation carries real losses: letting go of known structure, external validation and certainty—embracing non-theoretical uncertainty.</p>
+
+      <p>The transition wasn’t romantic. There was fear, friction and doubt. That’s the point.</p>
+
+      <p>Many organizational transformations fail because they are designed from theory, not from lived experience of loss and tension.</p>
+
+      <p>On a sailboat, the system is visible: limited energy, finite resources, constrained space and immediate consequences. You can’t hide inefficiency, postpone structural choices, or sustain unnecessary complexity.</p>
+
+      <p>That environment forces you to:</p>
+      <ul>
+        <li>Design with clarity. <span>(no illusion of abundance)</span></li>
+        <li>Prioritize with discipline. <span>(the essential wins)</span></li>
+        <li>Execute with coherence. <span>(decision → action)</span></li>
+        <li>Make choices under real constraints. <span>(not theoretical)</span></li>
+      </ul>
+
+      <p>Transformation isn’t a narrative shift. It’s crossing uncertainty and redesigning the whole system.</p>
+
+      <p>This isn’t anecdotal. It’s the foundation of how I intervene in organizations that need reinvention without breaking themselves in the process.</p>
+
+      <p class="em">I don’t speak about change from the outside. I’ve lived it structurally.</p>
+    `,
+    question: "Can an organization truly transform without accepting real losses—and redesigning the whole system?"
+  }
+};
 
 const COPY = {
   es: {
@@ -59,12 +147,11 @@ const COPY = {
     name: "Ricardo Ross",
 
     whoLabel: "Quién soy",
-    whoText: "Ingeniero Civil Industrial · MSc · MBA. 20+ años trabajando en empresas líderes (BCI, Walmart, Banco de Chile), liderando transformación, agilidad y ejecución en contextos de alta complejidad.",
+    whoText: "Ing. Civil Industrial · MSc · MBA. 20+ años trabajando en empresas líderes (BCI, Walmart, Banco de Chile), liderando transformación, agilidad y ejecución en contextos de alta complejidad.",
     whoMicro: PRO_LINKEDIN_SLOT_ES,
 
     whatLabel: "Qué hago",
-    // EXACTO como pediste:
-    whatText: "Aseguro que la estrategia se ejecute con integridad, convierto complejidad en resultados, resuelvo problemas complejos y habilito procesos reales de reinvención organizacional.",
+    whatText: "Convierto complejidad en ejecución: solución a problemas complejos, preservo la estrategia en su bajada a la operación y habilito reinvención organizacional con criterio y realidad",
 
     sig1: "Pensamiento sistémico + palanca tecnológica",
     sig2: "Integridad de ejecución estratégica",
@@ -133,7 +220,7 @@ const COPY = {
     whoMicro: PRO_LINKEDIN_SLOT_EN,
 
     whatLabel: "What I do",
-    whatText: "I ensure the integrity of strategy in execution, turn complexity into results, solve complex problems, and enable real organizational reinvention.",
+    whatText: "I turn complexity into execution: I solve complex problems, keep strategy intact as it hits operations, and enable organizational reinvention with rigor and reality.",
 
     sig1: "Systems thinking + tech leverage",
     sig2: "Strategic execution integrity",
@@ -212,6 +299,8 @@ function renderStatic() {
   els.sig2.querySelector("span").textContent = c.sig2;
   els.sig3.querySelector("span").textContent = c.sig3;
 
+  els.openStoryLabel.textContent = STORY[lang].openLabel;
+
   els.ctaTitle.textContent = c.ctaTitle;
   els.ctaNote.textContent = c.ctaNote;
   els.ctaEmail.textContent = c.ctaEmail;
@@ -222,7 +311,6 @@ function renderStatic() {
   els.railHint.textContent = c.railHint;
   els.detailKicker.textContent = c.detailKicker;
 
-  // Títulos (aunque el orden visual lo dicta HTML)
   els.oeTitle.textContent = c.cards.oe.title;
   els.oeSub.textContent = c.cards.oe.sub;
   els.miTitle.textContent = c.cards.mi.title;
@@ -235,6 +323,12 @@ function renderStatic() {
     <span>${c.footer[1]}</span><span class="sep">•</span>
     <span>${c.footer[2]}</span>
   `;
+
+  // Modal copy
+  els.storyKicker.textContent = STORY[lang].kicker;
+  els.storyTitle.textContent = STORY[lang].title;
+  els.storyBody.innerHTML = STORY[lang].bodyHtml;
+  els.storyQuestion.textContent = STORY[lang].question;
 }
 
 function renderDetail() {
@@ -245,7 +339,6 @@ function renderDetail() {
   els.detailText.textContent = d.text;
   els.detailOutcomes.innerHTML = d.outcomes.map(x => `<li>${x}</li>`).join("");
 
-  // Link contextual (OneMind en MI)
   if (d.link) {
     els.detailLink.hidden = false;
     els.detailLink.innerHTML = `<a href="${d.link.url}" target="_blank" rel="noopener">${d.link.label} →</a>`;
@@ -279,6 +372,20 @@ function setLang(next){
   renderDetail();
 }
 
+function openModal(){
+  els.storyModal.hidden = false;
+  els.storyModal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+  els.closeStory.focus();
+}
+
+function closeModal(){
+  els.storyModal.hidden = true;
+  els.storyModal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+  els.openStory.focus();
+}
+
 /* Events */
 cards.forEach(btn => {
   btn.addEventListener("mouseenter", () => setActive(btn.dataset.key));
@@ -288,10 +395,20 @@ cards.forEach(btn => {
 els.btnES.addEventListener("click", () => setLang("es"));
 els.btnEN.addEventListener("click", () => setLang("en"));
 
+els.openStory.addEventListener("click", openModal);
+els.closeStory.addEventListener("click", closeModal);
+
+// click fuera (backdrop)
+els.storyModal.addEventListener("click", (e) => {
+  const t = e.target;
+  if (t && t.dataset && t.dataset.close === "true") closeModal();
+});
+
+// ESC
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !els.storyModal.hidden) closeModal();
+});
+
 /* Init */
 renderStatic();
-setActive("oe"); // ✅ Orquestación por defecto
-
-
-
-
+setActive("oe");
