@@ -59,8 +59,10 @@ let lang = "es";
 let activeKey = "oe";
 
 // Slot “pro” para afinar con tu About real
-const PRO_LINKEDIN_SLOT_ES = "Especialista en ejecución: conecto estrategia, diseño organizacional y tecnología para resultados sostenibles.";
-const PRO_LINKEDIN_SLOT_EN = "Execution specialist: I connect strategy, organizational design and technology for durable outcomes.";
+const PRO_LINKEDIN_SLOT_ES =
+  "Especialista en ejecución: conecto estrategia, diseño organizacional y tecnología para resultados sostenibles.";
+const PRO_LINKEDIN_SLOT_EN =
+  "Execution specialist: I connect strategy, organizational design and technology for durable outcomes.";
 
 const STORY = {
   es: {
@@ -86,10 +88,10 @@ const STORY = {
 
       <p>Ese entorno obliga a:</p>
       <ul>
-        <li>Diseñar con claridad. <span>(sin ilusión de abundancia)</span></li>
-        <li>Priorizar con disciplina. <span>(lo esencial gana)</span></li>
-        <li>Ejecutar con coherencia. <span>(decisión → acción)</span></li>
-        <li>Tomar decisiones bajo restricción real. <span>(no teórica)</span></li>
+        <li>Diseñar con claridad.</li>
+        <li>Priorizar con disciplina.</li>
+        <li>Ejecutar con coherencia.</li>
+        <li>Tomar decisiones bajo restricción real.</li>
       </ul>
 
       <p>Transformarse no es cambiar discurso. Es atravesar incertidumbre y rediseñar el sistema completo.</p>
@@ -98,7 +100,8 @@ const STORY = {
 
       <p class="em">No hablo de cambio desde afuera. Lo he vivido estructuralmente.</p>
     `,
-    question: "¿Puede una organización transformarse de verdad sin aceptar pérdidas reales y rediseñar su sistema completo?"
+    question:
+      "¿Puede una organización transformarse de verdad sin aceptar pérdidas reales y rediseñar su sistema completo?",
   },
 
   en: {
@@ -124,10 +127,10 @@ const STORY = {
 
       <p>That environment forces you to:</p>
       <ul>
-        <li>Design with clarity. <span>(no illusion of abundance)</span></li>
-        <li>Prioritize with discipline. <span>(the essential wins)</span></li>
-        <li>Execute with coherence. <span>(decision → action)</span></li>
-        <li>Make choices under real constraints. <span>(not theoretical)</span></li>
+        <li>Design with clarity.</li>
+        <li>Prioritize with discipline.</li>
+        <li>Execute with coherence.</li>
+        <li>Make choices under real constraints.</li>
       </ul>
 
       <p>Transformation isn’t a narrative shift. It’s crossing uncertainty and redesigning the whole system.</p>
@@ -136,8 +139,9 @@ const STORY = {
 
       <p class="em">I don’t speak about change from the outside. I’ve lived it structurally.</p>
     `,
-    question: "Can an organization truly transform without accepting real losses—and redesigning the whole system?"
-  }
+    question:
+      "Can an organization truly transform without accepting real losses—and redesigning the whole system?",
+  },
 };
 
 const COPY = {
@@ -147,11 +151,13 @@ const COPY = {
     name: "Ricardo Ross",
 
     whoLabel: "Quién soy",
-    whoText: "Ing. Civil Industrial · MSc · MBA. 20+ años trabajando en empresas líderes (BCI, Walmart, Banco de Chile), liderando transformación, agilidad y ejecución en contextos de alta complejidad.",
+    whoText:
+      "Ing. Civil Industrial · MSc · MBA. 20+ años trabajando en empresas líderes (BCI, Walmart, Banco de Chile), liderando transformación, agilidad y ejecución en contextos de alta complejidad.",
     whoMicro: PRO_LINKEDIN_SLOT_ES,
 
     whatLabel: "Qué hago",
-    whatText: "Convierto complejidad en ejecución: solución a problemas complejos, preservo la estrategia en su bajada a la operación y habilito reinvención organizacional con criterio y realidad",
+    whatText:
+      "Convierto complejidad en ejecución: solución a problemas complejos, preservo la estrategia en su bajada a la operación y habilito reinvención organizacional con criterio y realidad",
 
     sig1: "Pensamiento sistémico + palanca tecnológica",
     sig2: "Integridad de ejecución estratégica",
@@ -168,46 +174,49 @@ const COPY = {
     detailKicker: "Qué logro",
 
     cards: {
-      oe: { title:"Orquestación de ejecución estratégica", sub:"Estrategia íntegra → acción sostenida" },
-      mi: { title:"MicroInnovación tecnológica", sub:"Problemas complejos → resolubles & escalables" },
-      rl: { title:"Reinvención y liderazgo organizacional", sub:"Cambios profundos → decisiones con criterio" },
+      oe: { title: "Orquestación de ejecución estratégica", sub: "Estrategia íntegra → acción sostenida" },
+      mi: { title: "MicroInnovación tecnológica", sub: "Problemas complejos → resolubles & escalables" },
+      rl: { title: "Reinvención y liderazgo organizacional", sub: "Cambios profundos → decisiones con criterio" },
     },
 
     detail: {
       oe: {
         title: "Orquestación de ejecución estratégica",
         value: "<b>Resultado:</b> que la estrategia ocurra sin distorsión ni deriva.",
-        text: "Mantengo integridad estratégica a través del cascadeo y en el tiempo. Conecto prioridades, decisiones, procesos críticos y métricas para evitar dilución y sostener coherencia bajo presión.",
+        text:
+          "Mantengo integridad estratégica a través del cascadeo y en el tiempo. Conecto prioridades, decisiones, procesos críticos y métricas para evitar dilución y sostener coherencia bajo presión.",
         outcomes: [
           "<b>Fidelidad:</b> <span>menos deriva, más alineamiento.</span>",
           "<b>Coherencia:</b> <span>prioridades, procesos y métricas conectados a la intención.</span>",
-          "<b>Sostén:</b> <span>acción consistente, no campañas de corto plazo.</span>"
-        ]
+          "<b>Sostén:</b> <span>acción consistente, no campañas de corto plazo.</span>",
+        ],
       },
       mi: {
         title: "MicroInnovación tecnológica",
         value: "<b>Resultado:</b> resolver problemas complejos y restaurar escalabilidad.",
-        text: "Convierto problemas complejos (proceso + tecnología + estructura + decisión) en soluciones implementables. Tecnología como palanca para recuperar gobernabilidad, elevar calidad de decisión y sostener crecimiento sin colapso.",
+        text:
+          "Convierto problemas complejos (proceso + tecnología + estructura + decisión) en soluciones implementables. Tecnología como palanca para recuperar gobernabilidad, elevar calidad de decisión y sostener crecimiento sin colapso.",
         link: { label: "Ver OneMind — plataforma de microinnovación", url: "https://www.onemind.works" },
         outcomes: [
           "<b>Gobernabilidad:</b> <span>sistemas predecibles bajo crecimiento.</span>",
           "<b>Decisión:</b> <span>menos fricción, más velocidad y precisión.</span>",
-          "<b>Escala:</b> <span>crecer sin degradación operativa.</span>"
-        ]
+          "<b>Escala:</b> <span>crecer sin degradación operativa.</span>",
+        ],
       },
       rl: {
         title: "Reinvención y liderazgo organizacional",
         value: "<b>Resultado:</b> reinvención real: decisiones visibles, no cambio superficial.",
-        text: "Como speaker y facilitador, trabajo con organizaciones y líderes en reinvención (modelo, estrategia, cultura). Pongo lenguaje y estructura a tensiones inevitables —legado, poder, trade-offs— y foco en decisiones que separan adaptación real de narrativa de cambio.",
+        text:
+          "Como speaker y facilitador, trabajo con organizaciones y líderes en reinvención (modelo, estrategia, cultura). Pongo lenguaje y estructura a tensiones inevitables —legado, poder, trade-offs— y foco en decisiones que separan adaptación real de narrativa de cambio.",
         outcomes: [
           "<b>Claridad:</b> <span>menos ruido, más decisiones explícitas.</span>",
           "<b>Fricción:</b> <span>anticipar tensiones en vez de negarlas.</span>",
-          "<b>Dirección:</b> <span>cambios con secuencia y criterio.</span>"
-        ]
-      }
+          "<b>Dirección:</b> <span>cambios con secuencia y criterio.</span>",
+        ],
+      },
     },
 
-    footer: ["Resolver problemas complejos","Escalar con coherencia","Ejecutar estrategia con fidelidad"]
+    footer: ["Resolver problemas complejos", "Escalar con coherencia", "Ejecutar estrategia con fidelidad"],
   },
 
   en: {
@@ -216,11 +225,13 @@ const COPY = {
     name: "Ricardo Ross",
 
     whoLabel: "Who I am",
-    whoText: "Industrial Civil Engineer · MSc · MBA. 20+ years across leading companies (BCI, Walmart, Banco de Chile), leading transformation, agility and execution in high-complexity environments.",
+    whoText:
+      "Industrial Civil Engineer · MSc · MBA. 20+ years across leading companies (BCI, Walmart, Banco de Chile), leading transformation, agility and execution in high-complexity environments.",
     whoMicro: PRO_LINKEDIN_SLOT_EN,
 
     whatLabel: "What I do",
-    whatText: "I turn complexity into execution: I solve complex problems, keep strategy intact as it hits operations, and enable organizational reinvention with rigor and reality.",
+    whatText:
+      "I turn complexity into execution: I solve complex problems, keep strategy intact as it hits operations, and enable organizational reinvention with rigor and reality.",
 
     sig1: "Systems thinking + tech leverage",
     sig2: "Strategic execution integrity",
@@ -237,47 +248,50 @@ const COPY = {
     detailKicker: "What I deliver",
 
     cards: {
-      oe: { title:"Strategic execution orchestration", sub:"Strategy integrity → sustained action" },
-      mi: { title:"Technology micro-innovation", sub:"Complex problems → solvable & scalable" },
-      rl: { title:"Organizational reinvention & leadership", sub:"Deep change → decisions with rigor" },
+      oe: { title: "Strategic execution orchestration", sub: "Strategy integrity → sustained action" },
+      mi: { title: "Technology micro-innovation", sub: "Complex problems → solvable & scalable" },
+      rl: { title: "Organizational reinvention & leadership", sub: "Deep change → decisions with rigor" },
     },
 
     detail: {
       oe: {
         title: "Strategic execution orchestration",
         value: "<b>Outcome:</b> strategy happens—without distortion or drift.",
-        text: "I keep strategy intact through the cascade and over time. I connect priorities, decision mechanisms, critical processes and metrics so execution stays coherent under pressure and doesn’t dissolve into disconnected initiatives.",
+        text:
+          "I keep strategy intact through the cascade and over time. I connect priorities, decision mechanisms, critical processes and metrics so execution stays coherent under pressure and doesn’t dissolve into disconnected initiatives.",
         outcomes: [
           "<b>Integrity:</b> <span>less drift, more alignment.</span>",
           "<b>Coherence:</b> <span>priorities, processes and metrics tied to intent.</span>",
-          "<b>Durability:</b> <span>consistent action, not short-term campaigns.</span>"
-        ]
+          "<b>Durability:</b> <span>consistent action, not short-term campaigns.</span>",
+        ],
       },
       mi: {
         title: "Technology micro-innovation",
         value: "<b>Outcome:</b> make complex problems solvable and restore scalability.",
-        text: "I turn complex problems (process + technology + structure + decision-making) into implementable solutions. Technology becomes the lever to regain governability, improve decision quality, and sustain growth without operational collapse.",
+        text:
+          "I turn complex problems (process + technology + structure + decision-making) into implementable solutions. Technology becomes the lever to regain governability, improve decision quality, and sustain growth without operational collapse.",
         link: { label: "Explore OneMind — micro-innovation platform", url: "https://www.onemind.works" },
         outcomes: [
           "<b>Governability:</b> <span>predictable systems under growth.</span>",
           "<b>Decision:</b> <span>less friction, more speed and accuracy.</span>",
-          "<b>Scale:</b> <span>grow without operational degradation.</span>"
-        ]
+          "<b>Scale:</b> <span>grow without operational degradation.</span>",
+        ],
       },
       rl: {
         title: "Organizational reinvention & leadership",
         value: "<b>Outcome:</b> real reinvention—visible choices, not superficial change.",
-        text: "As a speaker and facilitator, I work with organizations and leaders in real reinvention (model, strategy, culture). I give language and structure to inevitable tensions—legacy, power, trade-offs—and focus attention on the decisions that separate real adaptation from change narratives.",
+        text:
+          "As a speaker and facilitator, I work with organizations and leaders in real reinvention (model, strategy, culture). I give language and structure to inevitable tensions—legacy, power, trade-offs—and focus attention on the decisions that separate real adaptation from change narratives.",
         outcomes: [
           "<b>Clarity:</b> <span>less noise, more explicit choices.</span>",
           "<b>Friction:</b> <span>anticipate tensions instead of denying them.</span>",
-          "<b>Direction:</b> <span>sequenced change with rigor.</span>"
-        ]
-      }
+          "<b>Direction:</b> <span>sequenced change with rigor.</span>",
+        ],
+      },
     },
 
-    footer: ["Solve complex problems","Scale with coherence","Execute strategy with integrity"]
-  }
+    footer: ["Solve complex problems", "Scale with coherence", "Execute strategy with integrity"],
+  },
 };
 
 function renderStatic() {
@@ -337,7 +351,7 @@ function renderDetail() {
   els.detailTitle.textContent = d.title;
   els.detailValue.innerHTML = d.value;
   els.detailText.textContent = d.text;
-  els.detailOutcomes.innerHTML = d.outcomes.map(x => `<li>${x}</li>`).join("");
+  els.detailOutcomes.innerHTML = d.outcomes.map((x) => `<li>${x}</li>`).join("");
 
   if (d.link) {
     els.detailLink.hidden = false;
@@ -348,10 +362,10 @@ function renderDetail() {
   }
 }
 
-function setActive(key){
+function setActive(key) {
   activeKey = key;
 
-  cards.forEach(btn => {
+  cards.forEach((btn) => {
     const on = btn.dataset.key === key;
     btn.classList.toggle("active", on);
     btn.setAttribute("aria-selected", on ? "true" : "false");
@@ -360,7 +374,7 @@ function setActive(key){
   renderDetail();
 }
 
-function setLang(next){
+function setLang(next) {
   lang = next;
 
   els.btnES.classList.toggle("active", lang === "es");
@@ -372,14 +386,14 @@ function setLang(next){
   renderDetail();
 }
 
-function openModal(){
+function openModal() {
   els.storyModal.hidden = false;
   els.storyModal.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
   els.closeStory.focus();
 }
 
-function closeModal(){
+function closeModal() {
   els.storyModal.hidden = true;
   els.storyModal.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
@@ -387,7 +401,7 @@ function closeModal(){
 }
 
 /* Events */
-cards.forEach(btn => {
+cards.forEach((btn) => {
   btn.addEventListener("mouseenter", () => setActive(btn.dataset.key));
   btn.addEventListener("click", () => setActive(btn.dataset.key));
 });
@@ -398,10 +412,10 @@ els.btnEN.addEventListener("click", () => setLang("en"));
 els.openStory.addEventListener("click", openModal);
 els.closeStory.addEventListener("click", closeModal);
 
-// click fuera (backdrop)
+// Click fuera (solo backdrop)
 els.storyModal.addEventListener("click", (e) => {
-  const t = e.target;
-  if (t && t.dataset && t.dataset.close === "true") closeModal();
+  const target = e.target;
+  if (target && target.dataset && target.dataset.close === "true") closeModal();
 });
 
 // ESC
@@ -410,5 +424,10 @@ document.addEventListener("keydown", (e) => {
 });
 
 /* Init */
-renderStatic();
-setActive("oe");
+(function init() {
+  // ✅ blindaje: arrancar siempre cerrado
+  closeModal();
+
+  renderStatic();
+  setActive("oe");
+})();
