@@ -52,6 +52,13 @@
           <div class="signal" id="sig3"><i aria-hidden="true"></i><span></span></div>
         </div>
 
+        <!-- ✅ Nuevo: gatillo modal (texto puro) -->
+        <div class="microAction">
+          <button id="openStory" class="btn ghost small" type="button">
+            <span id="openStoryLabel">Una decisión estructural</span>
+          </button>
+        </div>
+
         <div class="cta" aria-label="Contactar">
           <div class="ctaLeft">
             <p class="ctaTitle" id="ctaTitle">Contacto</p>
@@ -66,7 +73,6 @@
       </div>
 
       <div class="panel heroRight" aria-label="Foto">
-        <!-- IMPORTANTE: asegura que este archivo esté en el mismo folder que index.html -->
         <img src="./profile.jpg" alt="Foto de perfil de Ricardo Ross" />
       </div>
     </section>
@@ -118,7 +124,6 @@
         <p class="detailValue" id="detailValue"></p>
         <p class="detailText" id="detailText"></p>
 
-        <!-- Link contextual (se muestra solo si existe) -->
         <p class="detailLink" id="detailLink" hidden></p>
 
         <ul class="outcomes" id="detailOutcomes"></ul>
@@ -130,7 +135,27 @@
     </footer>
   </main>
 
+  <!-- ✅ Modal texto puro -->
+  <div class="modal" id="storyModal" hidden aria-hidden="true">
+    <div class="modalBackdrop" data-close="true"></div>
+
+    <div class="modalCard" role="dialog" aria-modal="true" aria-labelledby="storyTitle">
+      <div class="modalHeader">
+        <div class="modalTitleWrap">
+          <p class="modalKicker" id="storyKicker">Nota personal</p>
+          <h2 class="modalTitle" id="storyTitle">Una decisión estructural</h2>
+        </div>
+        <button class="modalClose" id="closeStory" type="button" aria-label="Cerrar">✕</button>
+      </div>
+
+      <div class="modalBody" id="storyBody"></div>
+
+      <div class="modalFooter">
+        <p class="modalQuestion" id="storyQuestion"></p>
+      </div>
+    </div>
+  </div>
+
   <script src="app.js"></script>
 </body>
 </html>
-
