@@ -323,6 +323,10 @@ cards.forEach(btn => {
 els.btnES.addEventListener("click", () => setLang("es"));
 els.btnEN.addEventListener("click", () => setLang("en"));
 
+els.evidenceToggle.addEventListener("click", () => {
+  setEvidenceOpen(!evidenceOpen);
+});
+
 /* Init */
 renderStatic();
 setActive("oe"); // ✅ Orquestación por defecto
