@@ -52,206 +52,104 @@ const cards = Array.from(document.querySelectorAll(".card"));
 
 let lang = "es";
 let activeKey = "oe";
-let evidenceOpen = false; // ✅ default: Orquestación
+let evidenceOpen = false;
 
-// Slot “pro”: reemplázalo por 1 línea real de tu About cuando la pegues aquí
-const PRO_LINKEDIN_SLOT_ES = "";
-const PRO_LINKEDIN_SLOT_EN = "";
+/* =========================
+   COPY (con evidence incluido)
+========================= */
 
 const COPY = {
   es: {
-    topBadge: "DEEP-TECH · BOARD LEVEL · EJECUCIÓN",
-    heroKicker: "Perfil",
-    name: "Ricardo Ross",
-
-    whoLabel: "Quién soy",
-    whoText: "Ingeniero Civil Industrial · MSc · MBA. 20+ años trabajando en empresas líderes (BCI, Walmart, Banco de Chile), liderando transformación, agilidad y ejecución en contextos de alta complejidad.",
-    whoMicro: PRO_LINKEDIN_SLOT_ES,
-
-    whatLabel: "Qué hago",
-    // EXACTO como pediste:
-    whatText: "Aseguro que la estrategia se ejecute con integridad, convierto complejidad en resultados, resuelvo problemas complejos y habilito procesos reales de reinvención organizacional.",
-
-    sig1: "Pensamiento sistémico + palanca tecnológica",
-    sig2: "Integridad de ejecución estratégica",
-    sig3: "Reinvención bajo restricciones reales",
-
-    ctaTitle: "Contacto",
-    ctaNote: "Respuesta rápida por WhatsApp o email. LinkedIn para trayectoria.",
-    ctaEmail: "Email",
-    ctaWhats: "WhatsApp",
-    ctaLinkedIn: "LinkedIn",
-
-    railTitle: "Áreas de impacto",
-    railHint: "Hover / Tap",
-    detailKicker: "Qué logro",
-
-    cards: {
-      oe: { title:"Orquestación de ejecución estratégica", sub:"Estrategia íntegra → acción sostenida" },
-      mi: { title:"MicroInnovación tecnológica", sub:"Problemas complejos → resolubles & escalables" },
-      rl: { title:"Reinvención y liderazgo organizacional", sub:"Cambios profundos → decisiones con criterio" },
+    evidence: {
+      open: {
+        oe: "4x capacidad · +70% velocidad →",
+        mi: "Complejidad → sistema gobernable →",
+        rl: "+1.300 líderes · reinvención real →",
+      },
+      close: "Cerrar evidencia ←"
     },
 
     detail: {
       oe: {
         title: "Orquestación de ejecución estratégica",
         value: "<b>Resultado:</b> que la estrategia ocurra sin distorsión ni deriva.",
-        text: "Mantengo integridad estratégica a través del cascadeo y en el tiempo. Conecto prioridades, decisiones, procesos críticos y métricas para evitar dilución y sostener coherencia bajo presión.",
-        outcomes: [
-          "<b>Fidelidad:</b> <span>menos deriva, más alineamiento.</span>",
-          "<b>Coherencia:</b> <span>prioridades, procesos y métricas conectados a la intención.</span>",
-          "<b>Sostén:</b> <span>acción consistente, no campañas de corto plazo.</span>"
+        text: "Mantengo integridad estratégica en el cascadeo y en el tiempo.",
+        outcomes: [],
+        evidenceBlocks: [
+          {
+            title: "BCI — Capacidad enterprise instalada",
+            lines: [
+              "4x más capacidad por persona",
+              "3,8x producción anual",
+              "+70% velocidad",
+              "−50% costo core"
+            ],
+            insight: "La ejecución escala cuando el sistema protege la capacidad estratégica."
+          }
         ]
       },
+
       mi: {
         title: "MicroInnovación tecnológica",
-        value: "<b>Resultado:</b> resolver problemas complejos y restaurar escalabilidad.",
-        text: "Convierto problemas complejos (proceso + tecnología + estructura + decisión) en soluciones implementables. Tecnología como palanca para recuperar gobernabilidad, elevar calidad de decisión y sostener crecimiento sin colapso.",
-        link: { label: "Ver OneMind — plataforma de microinnovación", url: "https://www.onemind.works" },
-        outcomes: [
-          "<b>Gobernabilidad:</b> <span>sistemas predecibles bajo crecimiento.</span>",
-          "<b>Decisión:</b> <span>menos fricción, más velocidad y precisión.</span>",
-          "<b>Escala:</b> <span>crecer sin degradación operativa.</span>"
+        value: "<b>Resultado:</b> complejidad convertida en sistema operable.",
+        text: "Diseño soluciones que convierten fricción estructural en gobernabilidad.",
+        link: { label: "Ver OneMind", url: "https://www.onemind.works" },
+        outcomes: [],
+        evidenceBlocks: [
+          {
+            title: "Complejidad estructurada",
+            lines: [
+              "Mayor previsibilidad",
+              "Menos fricción decisional",
+              "Escalabilidad sin colapso"
+            ],
+            insight: "Muchos problemas humanos son arquitectura mal diseñada."
+          }
         ]
       },
+
       rl: {
         title: "Reinvención y liderazgo organizacional",
-        value: "<b>Resultado:</b> reinvención real: decisiones visibles, no cambio superficial.",
-        text: "Como speaker y facilitador, trabajo con organizaciones y líderes en reinvención (modelo, estrategia, cultura). Pongo lenguaje y estructura a tensiones inevitables —legado, poder, trade-offs— y foco en decisiones que separan adaptación real de narrativa de cambio.",
-        outcomes: [
-          "<b>Claridad:</b> <span>menos ruido, más decisiones explícitas.</span>",
-          "<b>Fricción:</b> <span>anticipar tensiones en vez de negarlas.</span>",
-          "<b>Dirección:</b> <span>cambios con secuencia y criterio.</span>"
+        value: "<b>Resultado:</b> reinvención estructural, no narrativa.",
+        text: "Trabajo con líderes en decisiones estructurales reales.",
+        outcomes: [],
+        evidenceBlocks: [
+          {
+            title: "Lean Management BCI 2.0",
+            lines: [
+              "+1.300 líderes formados",
+              "Prácticas estructuradas instaladas"
+            ],
+            insight: "El liderazgo cambia cuando cambia el método de decisión."
+          }
         ]
       }
-    },
-
-    footer: ["Resolver problemas complejos","Escalar con coherencia","Ejecutar estrategia con fidelidad"]
+    }
   },
 
   en: {
-    topBadge: "DEEP-TECH · BOARD LEVEL · EXECUTION",
-    heroKicker: "Profile",
-    name: "Ricardo Ross",
-
-    whoLabel: "Who I am",
-    whoText: "Industrial Civil Engineer · MSc · MBA. 20+ years across leading companies (BCI, Walmart, Banco de Chile), leading transformation, agility and execution in high-complexity environments.",
-    whoMicro: PRO_LINKEDIN_SLOT_EN,
-
-    whatLabel: "What I do",
-    whatText: "I ensure the integrity of strategy in execution, turn complexity into results, solve complex problems, and enable real organizational reinvention.",
-
-    sig1: "Systems thinking + tech leverage",
-    sig2: "Strategic execution integrity",
-    sig3: "Reinvention under real constraints",
-
-    ctaTitle: "Contact",
-    ctaNote: "Fast reply via WhatsApp or email. LinkedIn for full track record.",
-    ctaEmail: "Email",
-    ctaWhats: "WhatsApp",
-    ctaLinkedIn: "LinkedIn",
-
-    railTitle: "Impact domains",
-    railHint: "Hover / Tap",
-    detailKicker: "What I deliver",
-
-    cards: {
-      oe: { title:"Strategic execution orchestration", sub:"Strategy integrity → sustained action" },
-      mi: { title:"Technology micro-innovation", sub:"Complex problems → solvable & scalable" },
-      rl: { title:"Organizational reinvention & leadership", sub:"Deep change → decisions with rigor" },
-    },
-
-    detail: {
-      oe: {
-        title: "Strategic execution orchestration",
-        value: "<b>Outcome:</b> strategy happens—without distortion or drift.",
-        text: "I keep strategy intact through the cascade and over time. I connect priorities, decision mechanisms, critical processes and metrics so execution stays coherent under pressure and doesn’t dissolve into disconnected initiatives.",
-        outcomes: [
-          "<b>Integrity:</b> <span>less drift, more alignment.</span>",
-          "<b>Coherence:</b> <span>priorities, processes and metrics tied to intent.</span>",
-          "<b>Durability:</b> <span>consistent action, not short-term campaigns.</span>"
-        ]
+    evidence: {
+      open: {
+        oe: "4x Capacity · +70% Speed →",
+        mi: "Engineering Complexity →",
+        rl: "1,300+ Leaders · Structural Reinvention →",
       },
-      mi: {
-        title: "Technology micro-innovation",
-        value: "<b>Outcome:</b> make complex problems solvable and restore scalability.",
-        text: "I turn complex problems (process + technology + structure + decision-making) into implementable solutions. Technology becomes the lever to regain governability, improve decision quality, and sustain growth without operational collapse.",
-        link: { label: "Explore OneMind — micro-innovation platform", url: "https://www.onemind.works" },
-        outcomes: [
-          "<b>Governability:</b> <span>predictable systems under growth.</span>",
-          "<b>Decision:</b> <span>less friction, more speed and accuracy.</span>",
-          "<b>Scale:</b> <span>grow without operational degradation.</span>"
-        ]
-      },
-      rl: {
-        title: "Organizational reinvention & leadership",
-        value: "<b>Outcome:</b> real reinvention—visible choices, not superficial change.",
-        text: "As a speaker and facilitator, I work with organizations and leaders in real reinvention (model, strategy, culture). I give language and structure to inevitable tensions—legacy, power, trade-offs—and focus attention on the decisions that separate real adaptation from change narratives.",
-        outcomes: [
-          "<b>Clarity:</b> <span>less noise, more explicit choices.</span>",
-          "<b>Friction:</b> <span>anticipate tensions instead of denying them.</span>",
-          "<b>Direction:</b> <span>sequenced change with rigor.</span>"
-        ]
-      }
+      close: "Hide Evidence ←"
     },
-
-    footer: ["Solve complex problems","Scale with coherence","Execute strategy with integrity"]
+    detail: {}
   }
 };
 
-function renderStatic() {
-  const c = COPY[lang];
-  document.documentElement.lang = lang;
-
-  els.topBadge.textContent = c.topBadge;
-  els.heroKicker.textContent = c.heroKicker;
-  els.name.textContent = c.name;
-
-  els.whoLabel.textContent = c.whoLabel;
-  els.whoText.textContent = c.whoText;
-  els.whoMicro.textContent = c.whoMicro;
-
-  els.whatLabel.textContent = c.whatLabel;
-  els.whatText.textContent = c.whatText;
-
-  els.sig1.querySelector("span").textContent = c.sig1;
-  els.sig2.querySelector("span").textContent = c.sig2;
-  els.sig3.querySelector("span").textContent = c.sig3;
-
-  els.ctaTitle.textContent = c.ctaTitle;
-  els.ctaNote.textContent = c.ctaNote;
-  els.ctaEmail.textContent = c.ctaEmail;
-  els.ctaWhats.textContent = c.ctaWhats;
-  els.ctaLinkedIn.textContent = c.ctaLinkedIn;
-
-  els.railTitle.textContent = c.railTitle;
-  els.railHint.textContent = c.railHint;
-  els.detailKicker.textContent = c.detailKicker;
-
-  // Títulos (aunque el orden visual lo dicta HTML)
-  els.oeTitle.textContent = c.cards.oe.title;
-  els.oeSub.textContent = c.cards.oe.sub;
-  els.miTitle.textContent = c.cards.mi.title;
-  els.miSub.textContent = c.cards.mi.sub;
-  els.rlTitle.textContent = c.cards.rl.title;
-  els.rlSub.textContent = c.cards.rl.sub;
-
-  els.footerLine.innerHTML = `
-    <span>${c.footer[0]}</span><span class="sep">•</span>
-    <span>${c.footer[1]}</span><span class="sep">•</span>
-    <span>${c.footer[2]}</span>
-  `;
-}
-
+/* =========================
+   CORE FUNCTIONS
+========================= */
 
 function setEvidenceOpen(open) {
   evidenceOpen = open;
-
-  els.evidenceToggle.setAttribute("aria-expanded", open ? "true" : "false");
   els.evidence.hidden = !open;
-
-  // Button label
-  els.evidenceToggleLabel.textContent = open ? COPY[lang].evidence.close : COPY[lang].evidence.open[activeKey];
+  els.evidenceToggleLabel.textContent = open
+    ? COPY[lang].evidence.close
+    : COPY[lang].evidence.open[activeKey];
 }
 
 function renderDetail() {
@@ -260,77 +158,52 @@ function renderDetail() {
   els.detailTitle.textContent = d.title;
   els.detailValue.innerHTML = d.value;
   els.detailText.textContent = d.text;
-  els.detailOutcomes.innerHTML = d.outcomes.map((x) => `<li>${x}</li>`).join("");
+
+  els.detailOutcomes.innerHTML = "";
 
   if (d.link) {
     els.detailLink.hidden = false;
-    els.detailLink.innerHTML = `<a href="${d.link.url}" target="_blank" rel="noopener">${d.link.label} →</a>`;
+    els.detailLink.innerHTML =
+      `<a href="${d.link.url}" target="_blank">${d.link.label} →</a>`;
   } else {
     els.detailLink.hidden = true;
-    els.detailLink.innerHTML = "";
   }
 
-  // Evidence: reset closed on re-render
   setEvidenceOpen(false);
 
-  // Set per-domain button label
-  els.evidenceToggleLabel.textContent = COPY[lang].evidence.open[activeKey];
-
-  // Render blocks
-  const blocks = d.evidenceBlocks || [];
-  els.evidenceInner.innerHTML = blocks.map((b) => `
+  els.evidenceInner.innerHTML = d.evidenceBlocks.map(b => `
     <div class="evCard">
       <p class="evTitle">${b.title}</p>
       <ul class="evLines">
-        ${b.lines.map((ln) => `<li><span>${ln}</span></li>`).join("")}
+        ${b.lines.map(l => `<li>${l}</li>`).join("")}
       </ul>
       <div class="evFoot">${b.insight}</div>
-      ${activeKey === "mi" ? `<div class="evFoot"><a href="https://www.onemind.works" target="_blank" rel="noopener">www.onemind.works →</a></div>` : ``}
     </div>
   `).join("");
 }
 
-function setActive(key){
+function setActive(key) {
   activeKey = key;
-
   cards.forEach(btn => {
-    const on = btn.dataset.key === key;
-    btn.classList.toggle("active", on);
-    btn.setAttribute("aria-selected", on ? "true" : "false");
+    btn.classList.toggle("active", btn.dataset.key === key);
   });
-
   renderDetail();
 }
 
-function setLang(next){
-  lang = next;
+/* =========================
+   EVENTS
+========================= */
 
-  els.btnES.classList.toggle("active", lang === "es");
-  els.btnEN.classList.toggle("active", lang === "en");
-  els.btnES.setAttribute("aria-pressed", lang === "es" ? "true" : "false");
-  els.btnEN.setAttribute("aria-pressed", lang === "en" ? "true" : "false");
-
-  renderStatic();
-  renderDetail();
-}
-
-/* Events */
 cards.forEach(btn => {
-  btn.addEventListener("mouseenter", () => setActive(btn.dataset.key));
   btn.addEventListener("click", () => setActive(btn.dataset.key));
 });
-
-els.btnES.addEventListener("click", () => setLang("es"));
-els.btnEN.addEventListener("click", () => setLang("en"));
 
 els.evidenceToggle.addEventListener("click", () => {
   setEvidenceOpen(!evidenceOpen);
 });
 
-/* Init */
-renderStatic();
-setActive("oe"); // ✅ Orquestación por defecto
+/* =========================
+   INIT
+========================= */
 
-
-
-
+setActive("oe");
