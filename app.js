@@ -46,6 +46,11 @@ const els = {
   evidenceInner: document.getElementById("evidenceInner"),
 
   footerLine: document.getElementById("footerLine"),
+    openStory: document.getElementById("openStory"),
+  storyModal: document.getElementById("storyModal"),
+  closeStory: document.getElementById("closeStory"),
+  storyTitle: document.getElementById("storyTitle"),
+  storyBody: document.getElementById("storyBody"),
 };
 
 const cards = Array.from(document.querySelectorAll(".card"));
@@ -518,3 +523,4 @@ if (els.evidenceToggle) {
 /* Init */
 renderStatic();
 setActive("oe");
+
