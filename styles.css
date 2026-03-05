@@ -710,6 +710,7 @@ footer{
 
 /* Modal (Nota personal) */
 .modal[hidden]{ display:none !important; }
+
 .modal{
   position: fixed;
   inset: 0;
@@ -790,3 +791,17 @@ footer{
 }
 
 
+
+/* Personal CTA emphasis */
+.personalCta{
+  margin-top: 12px;
+}
+.personalCta .btn.secondary{
+  border-color: rgba(79,140,255,.45);
+  background: rgba(79,140,255,.10);
+  color: var(--text);
+}
+.personalCta .btn.secondary:hover{
+  border-color: rgba(79,140,255,.65);
+  background: rgba(79,140,255,.14);
+}
