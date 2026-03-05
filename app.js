@@ -17,6 +17,9 @@ const els = {
   sig2: document.getElementById("sig2"),
   sig3: document.getElementById("sig3"),
 
+  personalTitle: document.getElementById("personalTitle"),
+  personalNote: document.getElementById("personalNote"),
+
   ctaTitle: document.getElementById("ctaTitle"),
   ctaNote: document.getElementById("ctaNote"),
   ctaEmail: document.getElementById("ctaEmail"),
@@ -99,6 +102,32 @@ const COPY = {
         mi: "Escala sostenible · sistema gobernable →",
         rl: "+1.300 líderes · método instalado →",
       },
+
+    personal: {
+      title: "Nota personal",
+      note: "La decisión más importante de mi carrera no fue un cargo: fue rediseñar el sistema completo."
+    },
+    story: {
+      button: "Leer nota personal",
+      kicker: "NOTA PERSONAL",
+      title: "Una decisión estructural",
+      body: `
+        <p>Había estabilidad. Había ingreso fijo. Había estructura. Había reconocimiento.</p>
+        <p><b>También había una pregunta incómoda:</b> ¿estoy viviendo coherentemente con lo que sostengo profesionalmente sobre transformación, riesgo y diseño de sistemas?</p>
+        <p>Transformarse implica pérdidas reales: perder estructura conocida, perder validación externa, perder certezas; aceptar incertidumbre no teórica.</p>
+        <p>La transición no fue romántica. Hubo miedo, fricción y momentos de duda. Pero ahí está el punto.</p>
+        <p>En un velero, el sistema es visible: energía limitada, recursos finitos, espacio reducido y consecuencias inmediatas. No puedes esconder ineficiencia, no puedes postergar decisiones estructurales, no puedes sostener complejidad innecesaria.</p>
+        <ul>
+          <li><b>Diseñar con claridad</b> — sin ilusión de abundancia.</li>
+          <li><b>Priorizar con disciplina</b> — lo esencial gana.</li>
+          <li><b>Ejecutar con coherencia</b> — decisión → acción.</li>
+          <li><b>Decidir bajo restricción real</b> — no teórica.</li>
+        </ul>
+        <p>Transformarse no es cambiar discurso. Es atravesar incertidumbre y rediseñar el sistema completo.</p>
+        <p><b>No hablo de cambio desde afuera. Lo he vivido estructuralmente.</b></p>
+      `
+    },
+
       close: "Cerrar evidencia ←",
     },
 
@@ -254,6 +283,32 @@ const COPY = {
         mi: "Sustainable Scale · Governable System →",
         rl: "1,300+ Leaders · Method Installed →",
       },
+
+    personal: {
+      title: "Personal note",
+      note: "The most important decision in my career wasn’t a role: it was redesigning the whole system."
+    },
+    story: {
+      button: "Read personal note",
+      kicker: "PERSONAL NOTE",
+      title: "A structural decision",
+      body: `
+        <p>There was stability. A fixed income. Structure. Recognition.</p>
+        <p><b>There was also an uncomfortable question:</b> am I living coherently with what I advocate professionally about transformation, risk and systems design?</p>
+        <p>Transformation involves real losses: letting go of familiar structure, external validation, certainty—accepting non-theoretical uncertainty.</p>
+        <p>The transition wasn’t romantic. There was fear, friction, and doubt. That’s the point.</p>
+        <p>On a sailboat, the system is visible: limited energy, finite resources, reduced space and immediate consequences. You can’t hide inefficiency, postpone structural decisions, or sustain unnecessary complexity.</p>
+        <ul>
+          <li><b>Design with clarity</b> — no illusion of abundance.</li>
+          <li><b>Prioritize with discipline</b> — essentials win.</li>
+          <li><b>Execute with coherence</b> — decision → action.</li>
+          <li><b>Decide under real constraints</b> — not theoretical ones.</li>
+        </ul>
+        <p>Transformation isn’t changing narrative. It’s crossing uncertainty and redesigning the whole system.</p>
+        <p><b>I don’t talk about change from the outside. I’ve lived it structurally.</b></p>
+      `
+    },
+
       close: "Hide Evidence ←",
     },
 
@@ -395,6 +450,10 @@ function renderStatic() {
   els.sig2.querySelector("span").textContent = c.sig2;
   els.sig3.querySelector("span").textContent = c.sig3;
 
+  if (els.personalTitle && c.personal) els.personalTitle.textContent = c.personal.title;
+  if (els.personalNote && c.personal) els.personalNote.textContent = c.personal.note;
+  if (els.openStory && c.story) els.openStory.textContent = c.story.button;
+
   els.ctaTitle.textContent = c.ctaTitle;
   els.ctaNote.textContent = c.ctaNote;
   els.ctaEmail.textContent = c.ctaEmail;
@@ -505,6 +564,29 @@ function setLang(next) {
   renderDetail();
 }
 
+
+function openStory() {
+  const s = COPY[lang].story;
+  if (!s || !els.storyModal) return;
+
+  if (els.storyTitle) els.storyTitle.textContent = s.title;
+  if (els.storyBody) els.storyBody.innerHTML = s.body;
+
+  // Optional kicker
+  const kickerEl = document.getElementById("storyKicker");
+  if (kickerEl && s.kicker) kickerEl.textContent = s.kicker;
+
+  els.storyModal.hidden = false;
+  document.body.style.overflow = "hidden";
+}
+
+function closeStory() {
+  if (!els.storyModal) return;
+  els.storyModal.hidden = true;
+  document.body.style.overflow = "";
+}
+
+
 /* Events */
 cards.forEach((btn) => {
   btn.addEventListener("mouseenter", () => setActive(btn.dataset.key));
@@ -519,6 +601,22 @@ if (els.evidenceToggle) {
     setEvidenceOpen(!evidenceOpen);
   });
 }
+
+// Personal note modal
+if (els.openStory) {
+  els.openStory.addEventListener("click", openStory);
+}
+if (els.closeStory) {
+  els.closeStory.addEventListener("click", closeStory);
+}
+if (els.storyModal) {
+  els.storyModal.addEventListener("click", (e) => {
+    if (e.target === els.storyModal) closeStory();
+  });
+}
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeStory();
+});
 
 /* Init */
 renderStatic();
