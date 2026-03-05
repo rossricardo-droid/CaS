@@ -108,7 +108,7 @@ const COPY = {
       note: "La decisión más importante de mi carrera no fue un cargo: fue rediseñar el sistema completo."
     },
     story: {
-      button: "Leer nota personal",
+      button: "Leer",
       kicker: "NOTA PERSONAL",
       title: "Una decisión estructural",
       body: `
@@ -289,7 +289,7 @@ const COPY = {
       note: "The most important decision in my career wasn’t a role: it was redesigning the whole system."
     },
     story: {
-      button: "Read personal note",
+      button: "Read",
       kicker: "PERSONAL NOTE",
       title: "A structural decision",
       body: `
