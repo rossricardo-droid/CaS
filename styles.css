@@ -709,6 +709,7 @@ footer{
 .personalBtn{ white-space: nowrap; }
 
 /* Modal (Nota personal) */
+.modal[hidden]{ display:none !important; }
 .modal{
   position: fixed;
   inset: 0;
@@ -787,4 +788,5 @@ footer{
   .modalShell{ max-height: 84vh; }
   .modalTitle{ font-size: 20px; }
 }
+
 
