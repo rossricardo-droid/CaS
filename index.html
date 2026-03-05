@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260220-4">
 </head>
 
 <body>
@@ -48,6 +48,14 @@
 
         <div class="signalRow" aria-label="Señales clave">
           <div class="signal" id="sig1"><i aria-hidden="true"></i><span></span></div>
+
+        <div class="personalCta" aria-label="Nota personal">
+          <div class="personalLeft">
+            <p class="personalTitle" id="personalTitle">Nota personal</p>
+            <p class="personalNote" id="personalNote">La decisión más importante de mi carrera no fue un cargo: fue rediseñar el sistema completo.</p>
+          </div>
+          <button class="btn ghost personalBtn" id="openStory" type="button">Leer</button>
+        </div>
           <div class="signal" id="sig2"><i aria-hidden="true"></i><span></span></div>
           <div class="signal" id="sig3"><i aria-hidden="true"></i><span></span></div>
         </div>
@@ -138,9 +146,25 @@
     <footer>
       <div class="footline" id="footerLine"></div>
     </footer>
+
+    <!-- Nota personal (modal) -->
+    <div class="modal" id="storyModal" hidden>
+      <div class="modalShell" role="dialog" aria-modal="true" aria-label="Nota personal">
+        <div class="modalHead">
+          <div>
+            <p class="kicker" id="storyKicker">NOTA PERSONAL</p>
+            <h3 class="modalTitle" id="storyTitle">Una decisión estructural</h3>
+          </div>
+          <button class="iconBtn" id="closeStory" type="button" aria-label="Cerrar">✕</button>
+        </div>
+
+        <div class="modalBody" id="storyBody"></div>
+      </div>
+    </div>
+
   </main>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=20260220-4"></script>
 </body>
 </html>
 
