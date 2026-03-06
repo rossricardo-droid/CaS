@@ -746,7 +746,7 @@ footer{
   letter-spacing: -.01em;
 }
 .modalAnchor{
-  margin:22px 0;
+  margin:24px 0;
   font-size:18px;
   font-weight:500;
   color:#ffffff;
@@ -930,4 +930,5 @@ footer{
     width:100%;
   }
 }
+
 
