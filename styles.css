@@ -805,3 +805,120 @@ footer{
   border-color: rgba(79,140,255,.65);
   background: rgba(79,140,255,.14);
 }
+
+/*No quede entre chips */
+.personalCta{
+  margin-top: 16px;
+  padding: 14px 14px;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 18px;
+  background: rgba(7,10,16,.28);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 14px;
+}
+
+.personalCtaText{
+  display:flex;
+  flex-direction:column;
+  gap: 4px;
+}
+
+.personalCtaKicker{
+  margin:0;
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.personalCtaBody{
+  margin:0;
+  color: var(--text);
+  font-size: 13.5px;
+  line-height: 1.45;
+  max-width: 54ch;
+}
+
+.modal[hidden]{ display:none !important; }
+
+.modal{
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 18px;
+  background: rgba(0,0,0,.62);
+  backdrop-filter: blur(10px);
+}
+
+.modalShell{
+  width:min(860px, 92vw);
+  max-height: 85vh;
+  overflow:auto;
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: linear-gradient(180deg, rgba(9,12,20,.96), rgba(7,10,16,.96));
+  box-shadow: 0 24px 90px rgba(0,0,0,.65);
+}
+
+.modalHead{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap: 12px;
+  padding: 18px 18px 12px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.modalBody{
+  padding: 16px 18px 18px;
+  color: var(--muted);
+  font-size: 14.2px;
+  line-height: 1.62;
+}
+
+.modalBody p{
+  margin: 0 0 12px 0;
+}
+
+.modalBody ul{
+  margin: 0 0 12px 18px;
+  padding: 0;
+}
+
+.modalBody li{
+  margin-bottom: 8px;
+}
+
+.iconBtn{
+  appearance:none;
+  -webkit-appearance:none;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  color: var(--muted);
+  border-radius: 12px;
+  padding: 8px 10px;
+  cursor:pointer;
+  font: inherit;
+}
+
+.iconBtn:hover{
+  color: var(--text);
+  border-color: rgba(255,255,255,.22);
+  background: rgba(255,255,255,.06);
+}
+
+@media (max-width: 640px){
+  .personalCta{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .personalCta .btn{
+    width:100%;
+  }
+}
