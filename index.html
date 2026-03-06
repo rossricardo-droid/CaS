@@ -28,50 +28,51 @@
       </div>
     </header>
 
-    <section class="hero" aria-label="Presentación">
-      <div class="panel heroLeft">
-        <p class="kicker" id="heroKicker">Perfil</p>
-        <h1 id="name">Ricardo Ross</h1>
+  <div class="panel heroLeft">
+  <p class="kicker" id="heroKicker">Perfil</p>
+  <h1 id="name">Ricardo Ross</h1>
 
-        <div class="heroSplit" aria-label="Quién soy y qué hago">
-          <div class="heroBlock">
-            <p class="heroLabel" id="whoLabel">Quién soy</p>
-            <p class="heroText" id="whoText"></p>
-            <p class="heroMicro" id="whoMicro"></p>
-          </div>
+  <div class="heroSplit" aria-label="Quién soy y qué hago">
+    <div class="heroBlock">
+      <p class="heroLabel" id="whoLabel">Quién soy</p>
+      <p class="heroText" id="whoText"></p>
+      <p class="heroMicro" id="whoMicro"></p>
+    </div>
 
-          <div class="heroBlock">
-            <p class="heroLabel" id="whatLabel">Qué hago</p>
-            <p class="heroText strong" id="whatText"></p>
-          </div>
-        </div>
+    <div class="heroBlock">
+      <p class="heroLabel" id="whatLabel">Qué hago</p>
+      <p class="heroText strong" id="whatText"></p>
+    </div>
+  </div>
 
-        <div class="signalRow" aria-label="Señales clave">
-          <div class="signal" id="sig1"><i aria-hidden="true"></i><span></span></div>
-          <div class="signal" id="sig2"><i aria-hidden="true"></i><span></span></div>
-          <div class="signal" id="sig3"><i aria-hidden="true"></i><span></span></div>
-        </div>
+  <div class="signalRow" aria-label="Señales clave">
+    <div class="signal" id="sig1"><i aria-hidden="true"></i><span></span></div>
+    <div class="signal" id="sig2"><i aria-hidden="true"></i><span></span></div>
+    <div class="signal" id="sig3"><i aria-hidden="true"></i><span></span></div>
+  </div>
 
-        <div class="personalCta" aria-label="Nota personal">
-          <div class="personalLeft">
-            <p class="personalTitle" id="personalTitle">Nota personal</p>
-            <p class="personalNote" id="personalNote">La decisión más importante de mi carrera no fue un cargo: fue rediseñar el sistema completo.</p>
-          </div>
-          <button id="openStory" class="btn secondary" type="button">Leer</button>
-        </div>
+  <div class="personalCta">
+    <div class="personalCtaText">
+      <p class="personalCtaKicker" id="storyCtaKicker">Nota personal</p>
+      <p class="personalCtaBody" id="storyCtaBody">
+        La decisión más importante de mi carrera no fue un cargo: fue rediseñar el sistema completo.
+      </p>
+    </div>
+    <button id="openStory" class="btn secondary" type="button">Leer</button>
+  </div>
 
-        <div class="cta" aria-label="Contactar">
-          <div class="ctaLeft">
-            <p class="ctaTitle" id="ctaTitle">Contacto</p>
-            <p class="ctaNote" id="ctaNote">Respuesta rápida por WhatsApp o email. LinkedIn para trayectoria.</p>
-          </div>
-          <div class="ctaActions">
-            <a class="btn" id="ctaEmail" href="mailto:rossricardo@gmail.com">Email</a>
-            <a class="btn secondary" id="ctaWhats" href="https://wa.me/306948110134" target="_blank" rel="noopener">WhatsApp</a>
-            <a class="btn ghost" id="ctaLinkedIn" href="https://www.linkedin.com/in/rossricardo" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
-        </div>
-      </div>
+  <div class="cta" aria-label="Contactar">
+    <div class="ctaLeft">
+      <p class="ctaTitle" id="ctaTitle">Contacto</p>
+      <p class="ctaNote" id="ctaNote">Respuesta rápida por WhatsApp o email. LinkedIn para trayectoria.</p>
+    </div>
+    <div class="ctaActions">
+      <a class="btn" id="ctaEmail" href="mailto:rossricardo@gmail.com">Email</a>
+      <a class="btn secondary" id="ctaWhats" href="https://wa.me/306948110134" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn ghost" id="ctaLinkedIn" href="https://www.linkedin.com/in/rossricardo" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</div>
 
       <div class="panel heroRight" aria-label="Foto">
         <!-- IMPORTANTE: asegura que este archivo esté en el mismo folder que index.html -->
@@ -159,7 +160,22 @@
   </main>
 
  <script src="app.js?v=1"></script>
+  
+<div class="modal" id="storyModal" hidden>
+  <div class="modalShell" role="dialog" aria-modal="true" aria-labelledby="storyTitle">
+    <div class="modalHead">
+      <div>
+        <p class="kicker">Nota personal</p>
+        <h3 id="storyTitle">Una decisión estructural</h3>
+      </div>
+      <button class="iconBtn" id="closeStory" type="button" aria-label="Cerrar">✕</button>
+    </div>
+    <div class="modalBody" id="storyBody"></div>
+  </div>
+</div>
+  
 </body>
 </html>
+
 
 
