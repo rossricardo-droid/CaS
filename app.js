@@ -126,7 +126,7 @@ const COPY = {
           <p>Fue rediseñar el sistema completo.</p>
           
           <p>En 2022 nos fuimos a vivir a un velero en Europa con mi familia.<br>
-          Tres hijas de 3, 5 y 7 años cuando comenzamos.</p>
+          Tres hijas de 3, 5 y 7 años.</p>
           
           <p>No fue una aventura romántica.<br>
           Fue una decisión estructural.</p>
@@ -795,5 +795,6 @@ window.addEventListener("DOMContentLoaded", () => {
   if (btnES) btnES.addEventListener("click", () => setTimeout(syncStoryUi, 0));
   if (btnEN) btnEN.addEventListener("click", () => setTimeout(syncStoryUi, 0));
 });
+
 
 
