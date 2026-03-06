@@ -727,7 +727,6 @@ footer{
 
 .modalShell{
   width: min(760px, 92vw);
-  max-height: 86vh;
   overflow-y: auto;
   border-radius: 22px;
   border: 1px solid rgba(255,255,255,.08);
@@ -743,7 +742,9 @@ footer{
   padding: 20px 22px 14px;
   border-bottom: 1px solid rgba(255,255,255,.06);
 }
-
+.modalBody{
+  margin-right: auto;
+}
 .modalHead .kicker{
   margin:0 0 6px 0;
   color: var(--muted);
@@ -816,10 +817,48 @@ footer{
     padding: 14px;
   }
 
-  .modalShell{
-    width: 100%;
-    max-height: 88vh;
-    border-radius: 18px;
+.modalShell{
+  overflow-y: auto;
+}
+
+  .modalHead{
+    padding: 18px 18px 12px;
+  }
+
+  .modalBody{
+    padding: 18px 18px 22px;
+    font-size: 15px;
+    line-height: 1.68;
+  }
+
+  .modalAnchor{
+    font-size: 19px;
+    margin: 24px 0 22px;
+  }
+}
+
+.iconBtn{
+  appearance:none;
+  -webkit-appearance:none;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  color: var(--muted);
+  border-radius: 12px;
+  padding: 8px 10px;
+  cursor:pointer;
+  font: inherit;
+  flex: 0 0 auto;
+}
+
+.iconBtn:hover{
+  color: var(--text);
+  border-color: rgba(255,255,255,.22);
+  background: rgba(255,255,255,.06);
+}
+
+@media (max-width: 640px){
+  .modal{
+    padding: 14px;
   }
 
   .modalHead{
@@ -859,14 +898,6 @@ footer{
   background: rgba(255,255,255,.06);
   color: var(--text);
 }
-.modalBody{
-  padding: 14px 18px 18px;
-  overflow:auto;
-  max-height: calc(min(78vh, 720px) - 72px);
-  color: var(--muted);
-  font-size: 14.5px;
-  line-height: 1.55;
-}
 .modalBody p{ margin: 0 0 10px 0; }
 .modalBody b{ color: var(--text); font-weight: 600; }
 .modalBody ul{
@@ -878,7 +909,6 @@ footer{
 @media (max-width: 520px){
   .personalCta{ align-items: stretch; }
   .personalBtn{ width: 100%; }
-  .modalShell{ max-height: 84vh; }
   .modalTitle{ font-size: 20px; }
 }
 
@@ -949,7 +979,6 @@ footer{
 
 .modalShell{
   width:min(860px, 92vw);
-  max-height: 85vh;
   overflow:auto;
   border-radius: 22px;
   border: 1px solid rgba(255,255,255,.10);
@@ -1014,6 +1043,7 @@ footer{
     width:100%;
   }
 }
+
 
 
 
