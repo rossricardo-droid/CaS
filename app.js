@@ -664,4 +664,100 @@ window.addEventListener("DOMContentLoaded", () => {
 renderStatic();
 setActive("oe");
 
+window.addEventListener("DOMContentLoaded", () => {
+  const openBtn = document.getElementById("openStory");
+  const modal = document.getElementById("storyModal");
+  const closeBtn = document.getElementById("closeStory");
+  const title = document.getElementById("storyTitle");
+  const body = document.getElementById("storyBody");
+
+  const storyCopy = {
+    es: {
+      button: "Leer",
+      ctaBody: "La decisión más importante de mi carrera no fue un cargo: fue rediseñar el sistema completo.",
+      title: "Una decisión estructural",
+      body: `
+        <p>Había estabilidad. Había ingreso fijo. Había estructura. Había reconocimiento.</p>
+        <p><b>También había una pregunta incómoda:</b> ¿estoy viviendo coherentemente con lo que sostengo profesionalmente sobre transformación, riesgo y diseño de sistemas?</p>
+        <p>Transformarse implica pérdidas reales: perder estructura conocida, perder validación externa, perder certezas; aceptar incertidumbre no teórica.</p>
+        <p>La transición no fue romántica. Hubo miedo, fricción y momentos de duda. Pero ahí está el punto.</p>
+        <p>En un velero, el sistema es visible: energía limitada, recursos finitos, espacio reducido y consecuencias inmediatas. No puedes esconder ineficiencia, no puedes postergar decisiones estructurales, no puedes sostener complejidad innecesaria.</p>
+        <ul>
+          <li><b>Diseñar con claridad</b> — sin ilusión de abundancia.</li>
+          <li><b>Priorizar con disciplina</b> — lo esencial gana.</li>
+          <li><b>Ejecutar con coherencia</b> — decisión → acción.</li>
+          <li><b>Decidir bajo restricción real</b> — no teórica.</li>
+        </ul>
+        <p>Transformarse no es cambiar discurso. Es atravesar incertidumbre y rediseñar el sistema completo.</p>
+        <p><b>No hablo de cambio desde afuera. Lo he vivido estructuralmente.</b></p>
+      `
+    },
+    en: {
+      button: "Read",
+      ctaBody: "The most important decision in my career was not a title — it was redesigning the whole system.",
+      title: "A structural decision",
+      body: `
+        <p>There was stability. A fixed income. Structure. Recognition.</p>
+        <p><b>There was also an uncomfortable question:</b> am I living coherently with what I advocate professionally about transformation, risk and systems design?</p>
+        <p>Transformation involves real losses: letting go of familiar structure, external validation, certainty — accepting non-theoretical uncertainty.</p>
+        <p>The transition wasn’t romantic. There was fear, friction, and doubt. That’s the point.</p>
+        <p>On a sailboat, the system is visible: limited energy, finite resources, reduced space and immediate consequences. You can’t hide inefficiency, postpone structural decisions, or sustain unnecessary complexity.</p>
+        <ul>
+          <li><b>Design with clarity</b> — no illusion of abundance.</li>
+          <li><b>Prioritize with discipline</b> — essentials win.</li>
+          <li><b>Execute with coherence</b> — decision → action.</li>
+          <li><b>Decide under real constraints</b> — not theoretical ones.</li>
+        </ul>
+        <p>Transformation isn’t changing narrative. It’s crossing uncertainty and redesigning the whole system.</p>
+        <p><b>I don’t talk about change from the outside. I’ve lived it structurally.</b></p>
+      `
+    }
+  };
+
+  function getCurrentLang() {
+    return document.documentElement.lang === "en" ? "en" : "es";
+  }
+
+  function syncStoryUi() {
+    const current = storyCopy[getCurrentLang()];
+    if (openBtn) openBtn.textContent = current.button;
+    const ctaBody = document.getElementById("storyCtaBody");
+    if (ctaBody) ctaBody.textContent = current.ctaBody;
+  }
+
+  function openStory() {
+    const current = storyCopy[getCurrentLang()];
+    if (!modal) return;
+    if (title) title.textContent = current.title;
+    if (body) body.innerHTML = current.body;
+    modal.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeStory() {
+    if (!modal) return;
+    modal.hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  syncStoryUi();
+
+  if (openBtn) openBtn.addEventListener("click", openStory);
+  if (closeBtn) closeBtn.addEventListener("click", closeStory);
+
+  if (modal) {
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeStory();
+    });
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeStory();
+  });
+
+  const btnES = document.getElementById("btnES");
+  const btnEN = document.getElementById("btnEN");
+  if (btnES) btnES.addEventListener("click", () => setTimeout(syncStoryUi, 0));
+  if (btnEN) btnEN.addEventListener("click", () => setTimeout(syncStoryUi, 0));
+});
 
