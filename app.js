@@ -105,7 +105,7 @@ const COPY = {
 
     personal: {
       title: "Nota personal",
-      note: "La decisión más importante de mi carrera no fue un cargo: fue rediseñar el sistema completo."
+      note: "La decisión más importante de mi carrera no fue un cargo. Fue abandonar la estructura."
     },
     story: {
       button: "Leer",
@@ -795,6 +795,7 @@ window.addEventListener("DOMContentLoaded", () => {
   if (btnES) btnES.addEventListener("click", () => setTimeout(syncStoryUi, 0));
   if (btnEN) btnEN.addEventListener("click", () => setTimeout(syncStoryUi, 0));
 });
+
 
 
 
