@@ -824,6 +824,8 @@ footer{
 
 .modalBody > *{
   max-width: 640px;
+  margin-left: 0;
+  margin-right: auto;
 }
 
 /* ===============================
@@ -845,6 +847,9 @@ footer{
   letter-spacing:.01em;
 }
 
+.modalAnchor{
+  max-width: 560px;
+}
 
 /* ===============================
    CLOSE BUTTON
@@ -1043,6 +1048,7 @@ footer{
     width:100%;
   }
 }
+
 
 
 
