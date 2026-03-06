@@ -111,21 +111,56 @@ const COPY = {
       button: "Leer",
       kicker: "NOTA PERSONAL",
       title: "Una decisión estructural",
-      body: `
-        <p>Había estabilidad. Había ingreso fijo. Había estructura. Había reconocimiento.</p>
-        <p><b>También había una pregunta incómoda:</b> ¿estoy viviendo coherentemente con lo que sostengo profesionalmente sobre transformación, riesgo y diseño de sistemas?</p>
-        <p>Transformarse implica pérdidas reales: perder estructura conocida, perder validación externa, perder certezas; aceptar incertidumbre no teórica.</p>
-        <p>La transición no fue romántica. Hubo miedo, fricción y momentos de duda. Pero ahí está el punto.</p>
-        <p>En un velero, el sistema es visible: energía limitada, recursos finitos, espacio reducido y consecuencias inmediatas. No puedes esconder ineficiencia, no puedes postergar decisiones estructurales, no puedes sostener complejidad innecesaria.</p>
-        <ul>
-          <li><b>Diseñar con claridad</b> — sin ilusión de abundancia.</li>
-          <li><b>Priorizar con disciplina</b> — lo esencial gana.</li>
-          <li><b>Ejecutar con coherencia</b> — decisión → acción.</li>
-          <li><b>Decidir bajo restricción real</b> — no teórica.</li>
-        </ul>
-        <p>Transformarse no es cambiar discurso. Es atravesar incertidumbre y rediseñar el sistema completo.</p>
-        <p><b>No hablo de cambio desde afuera. Lo he vivido estructuralmente.</b></p>
-      `
+          body: `
+          <p>Había estabilidad.<br>
+          Había ingreso fijo.<br>
+          Había estructura.<br>
+          Había reconocimiento.</p>
+          
+          <p>También había una pregunta incómoda.</p>
+          
+          <p>¿Estoy viviendo coherentemente con lo que sostengo sobre transformación, decisiones y diseño de sistemas?</p>
+          
+          <p>La decisión no fue cambiar de empresa.</p>
+          
+          <p>Fue rediseñar el sistema completo.</p>
+          
+          <p>En 2022 nos fuimos a vivir a un velero en Europa con mi familia.<br>
+          Tres hijas de 3, 5 y 7 años cuando comenzamos.</p>
+          
+          <p>No fue una aventura romántica.<br>
+          Fue una decisión estructural.</p>
+          
+          <p>Cuando vives en un velero, el sistema se vuelve visible.</p>
+          
+          <p>La energía es limitada.<br>
+          El espacio es finito.<br>
+          El clima no negocia.<br>
+          Las decisiones tienen consecuencias inmediatas.</p>
+          
+          <p>No puedes esconder complejidad innecesaria.<br>
+          No puedes postergar lo importante.<br>
+          No puedes operar con ilusión de abundancia.</p>
+          
+          <p class="modalAnchor">Cuando desaparece la estructura, aparece el criterio.</p>
+          
+          <p>El sistema te obliga a algo muy simple.</p>
+          
+          <p>Diseñar con claridad.<br>
+          Priorizar con disciplina.<br>
+          Decidir bajo restricción real.</p>
+          
+          <p>En muchas organizaciones hablamos de transformación como si fuera una iniciativa.</p>
+          
+          <p>Pero transformarse de verdad significa atravesar incertidumbre, aceptar pérdidas y rediseñar el sistema completo.</p>
+          
+          <p>Tal vez por eso el aprendizaje más importante no tiene que ver con navegar.</p>
+          
+          <p>Tiene que ver con entender algo más simple.</p>
+          
+          <p>El criterio no aparece cuando todo funciona.<br>
+          Aparece cuando el sistema deja de protegerte.</p>
+          `
     },
 
       close: "Cerrar evidencia ←",
@@ -760,4 +795,5 @@ window.addEventListener("DOMContentLoaded", () => {
   if (btnES) btnES.addEventListener("click", () => setTimeout(syncStoryUi, 0));
   if (btnEN) btnEN.addEventListener("click", () => setTimeout(syncStoryUi, 0));
 });
+
 
