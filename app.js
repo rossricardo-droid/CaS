@@ -578,6 +578,9 @@ function openStory() {
 
   els.storyModal.hidden = false;
   document.body.style.overflow = "hidden";
+  document.getElementById("storyTitle").textContent = "Una decisión estructural";
+  document.getElementById("storyBody").innerHTML = "<p>...tu texto...</p>";
+  alert("click ok")
 }
 
 function closeStory() {
@@ -618,7 +621,47 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeStory();
 });
 
+/*Enganche de eventos*/
+
+window.addEventListener("DOMContentLoaded", () => {
+  // Re-tomar elementos (por si el JS corrió antes)
+  const openBtn =
+    document.getElementById("openStory") ||
+    document.querySelector('[data-action="open-story"]');
+
+  const modal = document.getElementById("storyModal");
+  const closeBtn = document.getElementById("closeStory");
+
+  function openStory() {
+    if (!modal) return;
+    modal.hidden = false;
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeStory() {
+    if (!modal) return;
+    modal.hidden = true;
+    document.body.style.overflow = "";
+  }
+
+  if (openBtn) openBtn.addEventListener("click", openStory);
+  if (closeBtn) closeBtn.addEventListener("click", closeStory);
+
+  // Cerrar haciendo click fuera
+  if (modal) {
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeStory();
+    });
+  }
+
+  // Cerrar con ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeStory();
+  });
+});
+
 /* Init */
 renderStatic();
 setActive("oe");
+
 
