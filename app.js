@@ -63,6 +63,14 @@ let lang = "es";
 let activeKey = "oe";
 let evidenceOpen = false;
 
+/* Detect language from URL */
+const params = new URLSearchParams(window.location.search);
+const urlLang = params.get("lang");
+
+if (urlLang === "en" || urlLang === "es") {
+  lang = urlLang;
+}
+
 const COPY = {
   es: {
     topBadge: "DEEP-TECH · BOARD LEVEL · EJECUCIÓN",
@@ -602,9 +610,7 @@ function renderDetail() {
   els.detailTitle.textContent = d.title;
   els.detailValue.innerHTML = d.value;
   els.detailText.textContent = d.text;
-  els.detailOutcomes.innerHTML = d.outcomes
-    .map((x) => `<li>${x}</li>`)
-    .join("");
+  els.detailOutcomes.innerHTML = d.outcomes.map((x) => `<li>${x}</li>`).join("");
 
   if (d.link) {
     els.detailLink.hidden = false;
@@ -652,6 +658,10 @@ function setActive(key) {
 
 function setLang(next) {
   lang = next;
+
+  const url = new URL(window.location);
+  url.searchParams.set("lang", lang);
+  window.history.replaceState({}, "", url);
 
   els.btnES.classList.toggle("active", lang === "es");
   els.btnEN.classList.toggle("active", lang === "en");
