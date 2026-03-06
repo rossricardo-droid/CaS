@@ -709,43 +709,113 @@ window.addEventListener("DOMContentLoaded", () => {
   const storyCopy = {
     es: {
       button: "Leer",
-      ctaBody: "La decisión más importante de mi carrera no fue un cargo: fue rediseñar el sistema completo.",
+        ctaBody: "La decisión más importante de mi carrera no fue un cargo. Fue abandonar la estructura.",,
       title: "Una decisión estructural",
-      body: `
-        <p>Había estabilidad. Había ingreso fijo. Había estructura. Había reconocimiento.</p>
-        <p><b>También había una pregunta incómoda:</b> ¿estoy viviendo coherentemente con lo que sostengo profesionalmente sobre transformación, riesgo y diseño de sistemas?</p>
-        <p>Transformarse implica pérdidas reales: perder estructura conocida, perder validación externa, perder certezas; aceptar incertidumbre no teórica.</p>
-        <p>La transición no fue romántica. Hubo miedo, fricción y momentos de duda. Pero ahí está el punto.</p>
-        <p>En un velero, el sistema es visible: energía limitada, recursos finitos, espacio reducido y consecuencias inmediatas. No puedes esconder ineficiencia, no puedes postergar decisiones estructurales, no puedes sostener complejidad innecesaria.</p>
-        <ul>
-          <li><b>Diseñar con claridad</b> — sin ilusión de abundancia.</li>
-          <li><b>Priorizar con disciplina</b> — lo esencial gana.</li>
-          <li><b>Ejecutar con coherencia</b> — decisión → acción.</li>
-          <li><b>Decidir bajo restricción real</b> — no teórica.</li>
-        </ul>
-        <p>Transformarse no es cambiar discurso. Es atravesar incertidumbre y rediseñar el sistema completo.</p>
-        <p><b>No hablo de cambio desde afuera. Lo he vivido estructuralmente.</b></p>
-      `
+body: `
+        <p>Había estabilidad.<br>
+        Había ingreso fijo.<br>
+        Había estructura.<br>
+        Había reconocimiento.</p>
+        
+        <p>También había una pregunta incómoda.</p>
+        
+        <p>¿Estoy viviendo coherentemente con lo que sostengo sobre transformación, decisiones y diseño de sistemas?</p>
+        
+        <p>La decisión no fue cambiar de empresa.</p>
+        
+        <p>Fue rediseñar el sistema completo.</p>
+        
+        <p>En 2022 nos fuimos a vivir a un velero en Europa con mi familia.<br>
+        Tres hijas de 3, 5 y 7 años cuando comenzamos.</p>
+        
+        <p>No fue una aventura romántica.<br>
+        Fue una decisión estructural.</p>
+        
+        <p>Cuando vives en un velero, el sistema se vuelve visible.</p>
+        
+        <p>La energía es limitada.<br>
+        El espacio es finito.<br>
+        El clima no negocia.<br>
+        Las decisiones tienen consecuencias inmediatas.</p>
+        
+        <p>No puedes esconder complejidad innecesaria.<br>
+        No puedes postergar lo importante.<br>
+        No puedes operar con ilusión de abundancia.</p>
+        
+        <p class="modalAnchor">Cuando desaparece la estructura, aparece el criterio.</p>
+        
+        <p>El sistema te obliga a algo muy simple.</p>
+        
+        <p>Diseñar con claridad.<br>
+        Priorizar con disciplina.<br>
+        Decidir bajo restricción real.</p>
+        
+        <p>En muchas organizaciones hablamos de transformación como si fuera una iniciativa.</p>
+        
+        <p>Pero transformarse de verdad significa atravesar incertidumbre, aceptar pérdidas y rediseñar el sistema completo.</p>
+        
+        <p>Tal vez por eso el aprendizaje más importante no tiene que ver con navegar.</p>
+        
+        <p>Tiene que ver con entender algo más simple.</p>
+        
+        <p>El criterio no aparece cuando todo funciona.<br>
+        Aparece cuando el sistema deja de protegerte.</p>
+`
     },
     en: {
       button: "Read",
       ctaBody: "The most important decision in my career was not a title — it was redesigning the whole system.",
       title: "A structural decision",
-      body: `
-        <p>There was stability. A fixed income. Structure. Recognition.</p>
-        <p><b>There was also an uncomfortable question:</b> am I living coherently with what I advocate professionally about transformation, risk and systems design?</p>
-        <p>Transformation involves real losses: letting go of familiar structure, external validation, certainty — accepting non-theoretical uncertainty.</p>
-        <p>The transition wasn’t romantic. There was fear, friction, and doubt. That’s the point.</p>
-        <p>On a sailboat, the system is visible: limited energy, finite resources, reduced space and immediate consequences. You can’t hide inefficiency, postpone structural decisions, or sustain unnecessary complexity.</p>
-        <ul>
-          <li><b>Design with clarity</b> — no illusion of abundance.</li>
-          <li><b>Prioritize with discipline</b> — essentials win.</li>
-          <li><b>Execute with coherence</b> — decision → action.</li>
-          <li><b>Decide under real constraints</b> — not theoretical ones.</li>
-        </ul>
-        <p>Transformation isn’t changing narrative. It’s crossing uncertainty and redesigning the whole system.</p>
-        <p><b>I don’t talk about change from the outside. I’ve lived it structurally.</b></p>
-      `
+     body: `
+        <p>There was stability.<br>
+        There was a steady income.<br>
+        There was structure.<br>
+        There was recognition.</p>
+        
+        <p>And there was also an uncomfortable question.</p>
+        
+        <p>Am I living coherently with what I claim about transformation, decision-making, and system design?</p>
+        
+        <p>The decision was not to change companies.</p>
+        
+        <p>It was to redesign the system entirely.</p>
+        
+        <p>In 2022 we moved to live on a sailboat in Europe with my family.<br>
+        Three daughters, aged 3, 5 and 7 when we started.</p>
+        
+        <p>It was not a romantic adventure.<br>
+        It was a structural decision.</p>
+        
+        <p>When you live on a sailboat, the system becomes visible.</p>
+        
+        <p>Energy is limited.<br>
+        Space is finite.<br>
+        The weather does not negotiate.<br>
+        Decisions have immediate consequences.</p>
+        
+        <p>You cannot hide unnecessary complexity.<br>
+        You cannot postpone what really matters.<br>
+        You cannot operate under the illusion of abundance.</p>
+        
+        <p class="modalAnchor">When structure disappears, judgment emerges.</p>
+        
+        <p>The system forces something very simple.</p>
+        
+        <p>Design with clarity.<br>
+        Prioritize with discipline.<br>
+        Make decisions under real constraints.</p>
+        
+        <p>Many organizations talk about transformation as if it were an initiative.</p>
+        
+        <p>But real transformation means crossing uncertainty, accepting losses, and redesigning the system entirely.</p>
+        
+        <p>Maybe that is why the most important learning has nothing to do with sailing.</p>
+        
+        <p>It has to do with something simpler.</p>
+        
+        <p>Judgment does not appear when everything works.<br>
+        It appears when the system stops protecting you.</p>
+`
     }
   };
 
@@ -795,6 +865,7 @@ window.addEventListener("DOMContentLoaded", () => {
   if (btnES) btnES.addEventListener("click", () => setTimeout(syncStoryUi, 0));
   if (btnEN) btnEN.addEventListener("click", () => setTimeout(syncStoryUi, 0));
 });
+
 
 
 
